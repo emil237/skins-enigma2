@@ -1,0 +1,418 @@
+
+<skin>
+	<!-- missing DefaultServiceScan -->
+	<!-- missing HdmiCECSetupScreen -->
+	
+	<!-- Satfinder -->
+	<screen name="Satfinder" position="center,190" size="1100,725" title="Satfinder">
+		<ePixmap pixmap="skin_default/icons/dish_scan.png" position="11,50" zPosition="0" size="170,170" alphatest="blend" />
+		<widget source="Frontend" render="Label" position="10,30" size="1080,35" font="Regular;32" zPosition="2" halign="center" valign="center" transparent="1">
+			<convert type="FrontendInfo">SNRdB</convert>
+		</widget>
+		<eLabel name="snr" text="SNR:" position="280,85" size="100,32" font="Regular;30" halign="right" />
+		<widget source="Frontend" render="Progress" position="395,90" size="300,25" pixmap="skin_default/bar_snr.png" borderWidth="2" borderColor="#cccccc">
+			<convert type="FrontendInfo">SNR</convert>
+		</widget>
+		<widget source="Frontend" render="Label" position="720,85" size="100,32" font="Regular;30" halign="left">
+			<convert type="FrontendInfo">SNR</convert>
+		</widget>
+		<eLabel name="ber" text="BER:" position="280,145" size="100,32" font="Regular;30" halign="right" />
+		<widget source="Frontend" render="Progress" position="395,150" size="300,25" pixmap="skin_default/bar_ber.png" borderWidth="2" borderColor="#cccccc">
+			<convert type="FrontendInfo">BER</convert>
+		</widget>
+		<widget source="Frontend" render="Label" position="720,145" size="100,32" font="Regular;30">
+			<convert type="FrontendInfo">BER</convert>
+		</widget>
+		<eLabel name="lock" text="Lock:" position="280,205" size="100,32" font="Regular;30" halign="right" />
+		<widget source="Frontend" render="Pixmap" pixmap="skin_default/icons/lock_on.png" position="390,205" zPosition="1" size="40,35" alphatest="blend">
+			<convert type="FrontendInfo">LOCK</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<widget source="Frontend" render="Pixmap" pixmap="skin_default/icons/lock_off.png" position="390,205" zPosition="1" size="40,35" alphatest="blend">
+			<convert type="FrontendInfo">LOCK</convert>
+			<convert type="ConditionalShowHide">Invert</convert>
+		</widget>
+		<eLabel position="20,255" size="1060,2" backgroundColor="grey" />
+		<widget name="config" position="20,265" size="1060,360" enableWrapAround="1" scrollbarMode="showOnDemand" textOffset="20,0" font="Regular;30" secondfont="Regular;27" itemHeight="40" />
+		<widget name="introduction" position="20,645" size="1060,55" font="Regular;30" />
+	</screen>
+	
+	<!-- new Video Enhancement -->
+	<screen name="VideoEnhancementSetup" position="center,111" size="1400,880" title="VideoEnhancementSetup">
+		<ePixmap pixmap="buttons/red.png" position="188,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="buttons/green.png" position="488,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="buttons/yellow.png" position="788,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="buttons/blue.png" position="1088,833" size="300,40" alphatest="blend" />
+		<widget source="key_red" render="Label" position="188,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget source="key_green" render="Label" position="488,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget source="key_yellow" render="Label" position="788,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget source="key_blue" render="Label" position="1088,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget name="config" position="11,0" zPosition="2" size="1379,720" scrollbarMode="showNever" transparent="0" backgroundColor="background" textOffset="20,0" font="Regular;30" secondfont="Regular;27" itemHeight="40" />
+		<widget source="introduction" render="Label" position="11,760" size="1379,40" zPosition="10" font="Regular;28" halign="center" valign="center" backgroundColor="background" transparent="1" foregroundColor="foreground" />
+	</screen>
+	
+	<screen name="VideoEnhancementPreview" position="center,111" size="1400,880" title="VideoEnhancementPreview">
+		<ePixmap pixmap="buttons/red.png" scale="stretch" position="188,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="buttons/green.png" scale="stretch" position="488,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="buttons/yellow.png" scale="stretch" position="788,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="buttons/blue.png" scale="stretch" position="1088,833" size="300,40" alphatest="blend" />
+		<widget source="key_red" render="Label" position="188,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget source="key_green" render="Label" position="488,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget name="config" position="11,0" zPosition="2" size="1379,720" scrollbarMode="showNever" transparent="0" backgroundColor="background" textOffset="20,0" font="Regular;30" secondfont="Regular;27" itemHeight="40" />
+		<widget source="introduction" render="Label" position="11,760" size="1379,40" zPosition="10" font="Regular;24" halign="center" valign="center" backgroundColor="background" transparent="1" foregroundColor="foreground" />
+	</screen>
+	
+	<!-- software management -->
+	<screen name="UpdatePluginMenu" position="center,111" size="1400,880" title="Software management">
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/red.png" position="188,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/green.png" position="488,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/yellow.png" position="788,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/blue.png" position="1088,833" size="300,40" alphatest="blend" />
+		<widget source="key_red" render="Label" position="188,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget source="menu" render="Listbox" position="11,0" size="1379,320" scrollbarMode="showNever">
+			<convert type="TemplatedMultiContent">{"template": [
+						MultiContentEntryText(pos = (10, 3), size = (1340,39), flags = RT_HALIGN_LEFT, text = 1), # index 0 is the MenuText,
+					],
+				"fonts": [gFont("Regular", 32)],
+				"itemHeight": 40
+				}</convert>
+		</widget>
+		<widget source="menu" render="Listbox" position="11,330" size="1379,440" scrollbarMode="showNever" selectionDisabled="1">
+			<convert type="TemplatedMultiContent">{"template": [
+						MultiContentEntryText(pos = (0, 0), size = (1350, 440), flags = RT_HALIGN_CENTER|RT_VALIGN_CENTER|RT_WRAP, text = 2), # index 2 is the Description,
+					],
+				"fonts": [gFont("Regular", 32)],
+				"itemHeight": 440
+				}</convert>
+		</widget>
+		<widget source="status" render="Label" position="11,780" size="1379,40" font="Regular;28" halign="center" transparent="1" backgroundColor="background" />
+	</screen>
+	
+	<!-- missing SoftwareManagerSetup -->
+	
+	<!-- manage extensions -->
+	<!-- Pluginmanager / Softwaremanager -->
+	<screen name="PluginManager" position="center,111" size="1400,880" title="Plugin manager">
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/red.png" position="188,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/green.png" position="488,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/yellow.png" position="788,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/blue.png" position="1088,833" size="300,40" alphatest="blend" />
+		<widget source="key_red" render="Label" position="188,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget source="key_green" render="Label" position="488,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget source="key_yellow" render="Label" position="788,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget source="key_blue" render="Label" position="1088,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget source="status" render="Label" position="11,760" size="1379,60" font="Regular;28" halign="center" transparent="1" />
+		<widget source="list" render="Listbox" position="11,0" size="1379,750" scrollbarMode="showNever">
+			<convert type="TemplatedMultiContent">{"templates":
+				{"default": (75,[
+						MultiContentEntryText(pos = (90, 2), size = (1210, 38), font=0, flags = RT_HALIGN_LEFT, text = 0), # index 0 is the name
+						MultiContentEntryText(pos = (100, 40), size = (1200, 32), font=1, flags = RT_HALIGN_LEFT, text = 2, color=0x969999), # index 2 is the description
+						MultiContentEntryPixmapAlphaTest(pos = (10, 10), size = (55, 55), png = 5), # index 5 is the status pixmap
+					]),
+				"category": (75,[
+						MultiContentEntryText(pos = (10, 2), size = (1290, 38), font=0, flags = RT_HALIGN_LEFT, text = 0), # index 0 is the name
+						MultiContentEntryText(pos = (20, 40), size = (1280, 32), font=1, flags = RT_HALIGN_LEFT, text = 1, color=0x969999), # index 1 is the description
+					])
+				},
+				"fonts": [gFont("Regular", 32),gFont("Regular", 28)],
+				"itemHeight": 75
+			}</convert>
+		</widget>
+	</screen>
+	
+	<!-- software management - install extensions end screen -->
+	<screen name="PluginManagerInfo" position="center,111" size="1400,880" title="Plugin manager activity information">
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/red.png" position="188,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/green.png" position="488,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/yellow.png" position="788,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/blue.png" position="1088,833" size="300,40" alphatest="blend" />
+		<widget source="key_red" render="Label" position="188,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget source="key_green" render="Label" position="488,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget source="status" render="Label" position="11,7600" size="1379,60" font="Regular;28" halign="center" transparent="1" />
+		<widget source="list" render="Listbox" position="11,0" size="1260,720" scrollbarMode="showNever">
+			<convert type="TemplatedMultiContent">{"template": [
+						MultiContentEntryText(pos = (90, 2), size = (1080, 38), font=0, flags = RT_HALIGN_LEFT, text = 0), # index 0 is the name
+						MultiContentEntryText(pos = (100, 40), size = (1070, 32), font=1, flags = RT_HALIGN_LEFT, text = 1, color=0x969999), # index 1 is the state
+						MultiContentEntryPixmapAlphaTest(pos = (11, 2), size = (55, 55), png = 2), # index 2 is the status pixmap
+					],
+				"fonts": [gFont("Regular", 30),gFont("Regular", 26)],
+				"itemHeight": 80
+				}</convert>
+		</widget>
+	</screen>
+	
+	<!-- software management - install extensions - help button -->
+	<screen name="PluginManagerHelp" position="center,111" size="1400,880" title="Plugin manager help">
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/red.png" position="188,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/green.png" position="488,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/yellow.png" position="788,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/blue.png" position="1088,833" size="300,40" alphatest="blend" />
+		<widget source="key_red" render="Label" position="188,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget source="status" render="Label" position="11,760" size="1379,60" font="Regular;28" halign="center" transparent="1" />
+		<widget source="list" render="Listbox" position="11,0" size="1379,720" scrollbarMode="showNever">
+			<convert type="TemplatedMultiContent">{"template": [
+						MultiContentEntryText(pos = (90, 2), size = (1080, 38), font=0, flags = RT_HALIGN_LEFT, text = 0), # index 0 is the name
+						MultiContentEntryText(pos = (100, 40), size = (1070, 32), font=1, flags = RT_HALIGN_LEFT, text = 1, color=0x969999), # index 1 is the state
+						MultiContentEntryPixmapAlphaTest(pos = (10, 2), size = (55, 55), png = 2), # index 2 is the status pixmap
+					],
+				"fonts": [gFont("Regular", 30),gFont("Regular", 26)],
+				"itemHeight": 80
+				}</convert>
+		</widget>
+	</screen>
+	
+	<!-- missing FlashOnline -->
+	<!-- missing ImageBackup -->
+	
+	<!-- software management - install local extension -->
+	<screen name="IpkgInstaller" position="center,111" size="1400,880" title="Ipkg Installer...">
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/red.png" position="188,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/green.png" position="488,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/yellow.png" position="788,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/blue.png" position="1088,833" size="300,40" alphatest="blend" />
+		<widget source="key_red" render="Label" position="188,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget source="key_green" render="Label" position="488,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget name="list" position="11,0" size="1379,720" itemHeight="40" scrollbarMode="showNever" transparent="0" backgroundColor="background" />
+		<widget source="introduction" render="Label" position="11,740" size="1379,80" font="Regular;28" halign="center" transparent="1" backgroundColor="background" />
+	</screen>
+	
+	<!-- software management - advanced - advancedrestore -->
+	<screen name="RestoreMenu" position="center,111" size="1400,880" title="Restore Backups">
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/red.png" position="188,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/green.png" position="488,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/yellow.png" position="788,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/blue.png" position="1088,833" size="300,40" alphatest="blend" />
+		<widget source="key_red" render="Label" position="188,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget source="key_green" render="Label" position="488,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget source="key_yellow" render="Label" position="788,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget name="filelist" position="11,0" size="1379,760" itemHeight="40" scrollbarMode="showNever" transparent="0" backgroundColor="background" />
+	</screen>
+	
+	<!-- Infopanel - Software Manager Screens- show default backup files -->
+	<!-- BackupRestore -->
+	<screen name="BackupSelection" position="center,111" size="1400,880" title="Select files/folders to backup...">
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/red.png" position="188,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/green.png" position="488,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/yellow.png" position="788,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/blue.png" position="1088,833" size="300,40" alphatest="blend" />
+		<widget source="key_red" render="Label" position="188,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget source="key_green" render="Label" position="488,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget source="key_yellow" render="Label" position="788,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget name="checkList" position="11,0" size="1240,760" itemHeight="40" scrollbarMode="showNever" zPosition="2" transparent="0" backgroundColor="background" />
+	</screen>
+	
+	<!-- software management - advanced options -packet management -->
+	<screen name="PacketManager" position="center,111" size="1400,880" title="IPKG upgrade...">
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/red.png" position="188,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/green.png" position="488,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/yellow.png" position="788,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/blue.png" position="1088,833" size="300,40" alphatest="blend" />
+		<widget source="key_red" render="Label" position="188,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget source="key_green" render="Label" position="488,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget source="list" render="Listbox" position="11,0" size="1379,750" scrollbarMode="showNever" transparent="0" backgroundColor="background">
+			<convert type="TemplatedMultiContent">{"template": [
+						MultiContentEntryText(pos = (5, 1), size = (1150, 38), font=0, flags = RT_HALIGN_LEFT, text = 0), # index 0 is the name
+						MultiContentEntryText(pos = (5, 40), size = (1150, 35), font=1, flags = RT_HALIGN_LEFT, text = 2), # index 2 is the description
+						MultiContentEntryPixmapAlphaTest(pos = (1270, 3), size = (68, 68), png = 4), # index 4 is the status pixmap
+						MultiContentEntryPixmapAlphaTest(pos = (0, 74), size = (1350, 1), png = 5), # index 4 is the div pixmap
+					],
+				"fonts": [gFont("Regular", 32),gFont("Regular", 26)],
+				"itemHeight": 75
+				}</convert>
+		</widget>
+	</screen>
+	
+	<!-- missing ShowUpdatePackages -->
+	
+	<!-- software management - advanced options - select upgrade source -->
+	<screen name="IPKGMenu" position="center,111" size="1400,880" title="Select IPKG source.....">
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/red.png" position="188,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/green.png" position="488,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/yellow.png" position="788,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/blue.png" position="1088,833" size="300,40" alphatest="blend" />
+		<widget source="key_red" render="Label" position="188,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget source="key_green" render="Label" position="488,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget name="filelist" position="11,0" size="1379,760" itemHeight="40" scrollbarMode="showNever" transparent="0" backgroundColor="background" />
+	</screen>
+	
+	<!-- software management - advanced options - select upgrade source  - edit -->
+	<screen name="IPKGSource" position="center,111" size="1400,880" title="IPKG source">
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/red.png" position="188,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/green.png" position="488,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/yellow.png" position="788,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/blue.png" position="1088,833" size="300,40" alphatest="blend" />
+		<widget source="key_red" render="Label" position="188,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget source="key_green" render="Label" position="488,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget source="key_yellow" render="Label" position="788,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget source="key_blue" render="Label" position="1088,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget name="text" position="11,0" size="1240,800" zPosition="1" font="Regular;32" transparent="0" backgroundColor="background" />
+	</screen>
+	
+	<!-- missing SoftwareManagerInfo -->
+	<!-- software management - install extensions - view details -->
+	<screen name="PluginDetails" position="center,111" size="1400,880" title="Plugin details">
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/red.png" position="188,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/green.png" position="488,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/yellow.png" position="788,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/blue.png" position="1088,833" size="300,40" alphatest="blend" />
+		<widget source="key_red" render="Label" position="188,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget source="key_green" render="Label" position="488,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget name="statuspic" position="11,750" size="48,48" alphatest="blend" />
+		<widget source="author" render="Label" position="100,750" size="1250,50" font="Regular;30" backgroundColor="background" transparent="1" />
+		<widget name="detailtext" position="11,60" size="680,700" font="Regular;28" backgroundColor="background" transparent="1" />
+		<widget name="screenshot" position="740,60" size="600,450" alphatest="blend" />
+		<widget name="divpic" position="0,0" size="0,0" />
+	</screen>
+	
+	<!-- infopanel - software manager - software update - progress -->
+	<!-- SoftwareManager / UpdatePlugin -->
+	<screen name="UpdatePlugin" position="center,center" size="800,250" title="Software Update...">
+		<!--(UpdatePlugin list)-->
+		<widget name="activityslider" position="20,20" size="760,30" borderWidth="2" borderColor="grey" />
+		<widget source="package" render="Label" position="20,60" size="760,40" font="Regular;30" />
+		<widget source="status" render="Label" position="20,120" size="760,70" font="Regular;30" />
+		<widget name="slider" position="20,210" size="760,30" borderWidth="2" borderColor="grey" />
+	</screen>
+	
+	<!-- missing openvix SoftwareUpdateChoices -->
+	<screen name="EPGMainSetup" position="center,111" size="1400,880" title="EPG Import Configuration">
+		<ePixmap alphatest="blend" pixmap="nitrofhd-oealliance/buttons/red.png" position="180,833" size="300,40" />
+		<ePixmap alphatest="blend" pixmap="nitrofhd-oealliance/buttons/green.png" position="480,833" size="300,40" />
+		<ePixmap alphatest="blend" pixmap="nitrofhd-oealliance/buttons/yellow.png" position="780,833" size="300,40" />
+		<ePixmap alphatest="blend" pixmap="nitrofhd-oealliance/buttons/blue.png" position="1080,833" size="300,40" />
+		<widget backgroundColor="background" font="Regular;24" foregroundColor="foreground" halign="center" name="key_red" position="180,833" size="300,40" transparent="1" valign="center" zPosition="1" />
+		<widget backgroundColor="background" font="Regular;24" foregroundColor="foreground" halign="center" name="key_green" position="480,833" size="300,40" transparent="1" valign="center" zPosition="1" />
+		<widget backgroundColor="background" font="Regular;24" foregroundColor="foreground" halign="center" name="key_yellow" position="780,833" size="300,40" transparent="1" valign="center" zPosition="1" />
+		<widget backgroundColor="background" font="Regular;24" foregroundColor="foreground" halign="center" name="key_blue" position="1080,833" size="300,40" transparent="1" valign="center" zPosition="1" />
+		<widget itemHeight="40" name="config" position="11,0" scrollbarMode="showNever" size="1380,600" textOffset="20,0" font="Regular;30" secondfont="Regular;27" />
+		<widget backgroundColor="background2" font="Regular;28" foregroundColor="yellowB" halign="center" name="statusbar" position="11,910" size="1230,40" transparent="1" />
+		<widget backgroundColor="background2" font="Regular;28" foregroundColor="yellowB" name="status" position="11,750" size="1230,200" transparent="1" />
+	</screen>
+	
+	<screen name="EPGImportConfig" position="center,111" size="1400,880" title="EPG Import Configuration">
+		<ePixmap alphatest="blend" pixmap="nitrofhd-oealliance/buttons/red.png" position="180,833" size="300,40" />
+		<ePixmap alphatest="blend" pixmap="nitrofhd-oealliance/buttons/green.png" position="480,833" size="300,40" />
+		<ePixmap alphatest="blend" pixmap="nitrofhd-oealliance/buttons/yellow.png" position="780,833" size="300,40" />
+		<ePixmap alphatest="blend" pixmap="nitrofhd-oealliance/buttons/blue.png" position="1080,833" size="300,40" />
+		<widget backgroundColor="background" font="Regular;24" foregroundColor="foreground" halign="center" name="key_red" position="180,833" size="300,40" transparent="1" valign="center" zPosition="1" />
+		<widget backgroundColor="background" font="Regular;24" foregroundColor="foreground" halign="center" name="key_green" position="480,833" size="300,40" transparent="1" valign="center" zPosition="1" />
+		<widget backgroundColor="background" font="Regular;24" foregroundColor="foreground" halign="center" name="key_yellow" position="780,833" size="300,40" transparent="1" valign="center" zPosition="1" />
+		<widget backgroundColor="background" font="Regular;24" foregroundColor="foreground" halign="center" name="key_blue" position="1080,833" size="300,40" transparent="1" valign="center" zPosition="1" />
+		<widget itemHeight="40" name="config" position="11,0" scrollbarMode="showNever" size="1380,600" textOffset="20,0" font="Regular;30" secondfont="Regular;27" />
+		<widget backgroundColor="background2" font="Regular;28" foregroundColor="yellowB" halign="center" name="statusbar" position="11,910" size="1230,40" transparent="1" />
+		<widget backgroundColor="background2" font="Regular;28" foregroundColor="yellowB" name="status" position="11,750" size="1230,200" transparent="1" />
+	</screen>
+	
+	<screen name="EPGImportSources" position="center,111" size="1400,880" title="EPG Import Sources">
+		<ePixmap alphatest="blend" pixmap="nitrofhd-oealliance/buttons/red.png" position="180,833" size="300,40" />
+		<ePixmap alphatest="blend" pixmap="nitrofhd-oealliance/buttons/green.png" position="480,833" size="300,40" />
+		<ePixmap alphatest="blend" pixmap="nitrofhd-oealliance/buttons/yellow.png" position="780,833" size="300,40" />
+		<ePixmap alphatest="blend" pixmap="nitrofhd-oealliance/buttons/blue.png" position="1080,833" size="300,40" />
+		<widget backgroundColor="background" font="Regular;24" foregroundColor="foreground" halign="center" name="key_red" position="180,833" size="300,40" transparent="1" valign="center" zPosition="1" />
+		<widget backgroundColor="background" font="Regular;24" foregroundColor="foreground" halign="center" name="key_green" position="480,833" size="300,40" transparent="1" valign="center" zPosition="1" />
+		<widget backgroundColor="background" font="Regular;24" foregroundColor="foreground" halign="center" name="key_yellow" position="780,833" size="300,40" transparent="1" valign="center" zPosition="1" />
+		<widget backgroundColor="background" font="Regular;24" foregroundColor="foreground" halign="center" name="key_blue" position="1080,833" size="300,40" transparent="1" valign="center" zPosition="1" />
+		<widget itemHeight="40" name="list" position="11,0" scrollbarMode="showOnDemand" size="1380,800" transparent="1" />
+	</screen>
+	
+	<!-- missing filtersServicesSetup -->
+	<!-- missing filtersServicesSelection -->
+	<!-- missing EPGImportProfile -->
+	
+	<screen name="EPGImportLog" position="center,111" size="1400,880" title="EPG Import Log">
+		<ePixmap alphatest="blend" pixmap="nitrofhd-oealliance/buttons/red.png" position="180,833" size="300,40" />
+		<ePixmap alphatest="blend" pixmap="nitrofhd-oealliance/buttons/green.png" position="480,833" size="300,40" />
+		<ePixmap alphatest="blend" pixmap="nitrofhd-oealliance/buttons/yellow.png" position="780,833" size="300,40" />
+		<ePixmap alphatest="blend" pixmap="nitrofhd-oealliance/buttons/blue.png" position="1080,833" size="300,40" />
+		<widget backgroundColor="background" font="Regular;24" foregroundColor="foreground" halign="center" name="key_red" position="180,833" size="300,40" transparent="1" valign="center" zPosition="1" />
+		<widget backgroundColor="background" font="Regular;24" foregroundColor="foreground" halign="center" name="key_green" position="480,833" size="300,40" transparent="1" valign="center" zPosition="1" />
+		<widget backgroundColor="background" font="Regular;24" foregroundColor="foreground" halign="center" name="key_yellow" position="780,833" size="300,40" transparent="1" valign="center" zPosition="1" />
+		<widget backgroundColor="background" font="Regular;24" foregroundColor="foreground" halign="center" name="key_blue" position="1080,833" size="300,40" transparent="1" valign="center" zPosition="1" />
+		<widget name="list" position="11,0" size="1380,800" transparent="1" />
+	</screen>
+	
+	<!-- CutListEditor -->
+	<screen name="CutListEditor" position="0,0" size="1920,1080" title="Cutlist editor" backgroundColor="background40" flags="wfNoBorder">
+		<eLabel text="CutlistEditor" position="100,70" size="300,30" font="Regular;28" backgroundColor="#16244b" transparent="1" />
+		<widget source="global.CurrentTime" render="Label" position="1293,64" size="565,46" font="Regular; 26" halign="right" backgroundColor="#16244b" transparent="1">
+			<convert type="ClockToText">Format:%A %B %d, %H:%M</convert>
+		</widget>
+		<eLabel position="100,200" size="380,590" zPosition="1" backgroundColor="grey" />
+		<eLabel position="100,200" size="380,590" zPosition="2" backgroundColor="black" />
+		<widget source="cutlist" render="Listbox" position="100,200" size="380,590" zPosition="3" scrollbarMode="showNever" transparent="1">
+			<convert type="TemplatedMultiContent">{"template": [
+						MultiContentEntryText(pos=(10,2), size=(170, 20), text = 1, backcolor = MultiContentTemplateColor(3)),
+						MultiContentEntryText(pos=(190,2), size=(80, 20), text = 2, flags = RT_HALIGN_CENTER, backcolor = MultiContentTemplateColor(3))
+					],
+				 "fonts": [gFont("Regular", 20)],
+				 "itemHeight": 25
+				}</convert>
+		</widget>
+		<eLabel position="599,187" size="1020,580" zPosition="2" backgroundColor="grey" />
+		<eLabel position="599,187" size="1020,580" zPosition="3" backgroundColor="transparent" />
+		<widget name="Video" position="599,187" zPosition="-10" size="1020,580" />
+		<widget source="session.CurrentService" render="Label" position="638,842" size="965,62" zPosition="3" font="Regular; 32" halign="center" valign="center" backgroundColor="black" transparent="1" foregroundColor="orange">
+			<convert type="ServiceName">Name</convert>
+		</widget>
+		<widget source="session.CurrentService" render="Label" position="638,925" size="967,44" zPosition="3" font="Regular; 28" halign="center" valign="center" backgroundColor="black" transparent="1">
+			<convert type="ServicePosition">Position,Detailed</convert>
+		</widget>
+		<widget name="Timeline" position="806,987" size="696,20" zPosition="3" backgroundColor="#808888" pointer="skin_default/position_arrow.png:3,5" foregroundColor="black" />
+	</screen>
+	
+	<!-- CutListContextMenu -->
+	<screen name="CutListContextMenu" position="center,111" size="1400,800" title="">
+		<widget source="menu" render="Listbox" position="10,10" size="1380,760" zPosition="2" scrollbarMode="showNever" backgroundColor="background" transparent="0">
+			<convert type="StringList" />
+		</widget>
+	</screen>
+	
+	<!-- ##GraphMultiEPG## -->
+	<!-- same as GraphicalEPGPIG -->
+	<screen name="GraphMultiEPG" title="Image Information" position="0,0" size="1920,1080" flags="wfNoBorder" backgroundColor="mid">
+		<panel name="GraphicalEPGPIG" />
+	</screen>
+	
+	<!-- ##GraphMultiEPGList## -->
+	<!-- same as SimpleChannelSelection-->
+	<screen name="GraphMultiEPGList" title="Image Information" position="0,0" size="1920,1080" flags="wfNoBorder" backgroundColor="mid">
+		<panel name="SimpleChannelSelection" />
+	</screen>
+	
+	<!-- Picture Player DMM MediaCenter-->
+	<screen name="picshow" position="center,100" size="1820,920" title="PicturePlayer">
+		<!-- Icons Buttons -->
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/red.png" position="20,4" size="290,50" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/green.png" position="315,4" size="290,50" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/yellow.png" position="610,4" size="290,50" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/blue.png" position="905,4" size="290,50" alphatest="blend" />
+		<widget source="key_red" render="Label" position="20,5" size="290,50" zPosition="1" font="Regular;26" halign="center" valign="center" backgroundColor="#9f1313" transparent="1" />
+		<widget source="key_green" render="Label" position="315,5" size="290,50" zPosition="1" font="Regular;26" halign="center" valign="center" backgroundColor="#1f771f" transparent="1" />
+		<widget source="key_yellow" render="Label" position="610,5" size="290,50" zPosition="1" font="Regular;26" halign="center" valign="center" backgroundColor="#a08500" transparent="1" />
+		<widget source="key_blue" render="Label" position="905,5" size="290,50" zPosition="1" font="Regular;26" halign="center" valign="center" backgroundColor="#18188b" transparent="1" />
+		<widget source="global.CurrentTime" render="Label" position="1680,15" size="120,40" font="Regular;29" halign="right" backgroundColor="background" transparent="1">
+			<convert type="ClockToText">Default</convert>
+		</widget>
+		<widget source="global.CurrentTime" render="Label" position="1230,15" size="450,40" font="Regular;29" halign="right" backgroundColor="background" transparent="1">
+			<convert type="ClockToText">Format:%A %d. %B</convert>
+		</widget>
+		<eLabel position="20,60" size="1780,2" backgroundColor="grey" />
+		<eLabel position="630,60" size="2,850" backgroundColor="grey" />
+		<widget source="label" render="Label" position="10,675" size="610,225" font="Regular;28" />
+		<widget name="thn" position="20,65" size="600,600" />
+		<widget name="filelist" position="700,70" size="1100,800" scrollbarMode="showOnDemand" />
+	</screen>
+	
+	<!-- Picture Player - Pic Exif -->
+	<screen name="Pic_Exif" position="center,center" size="1190,840" title="Info">
+		<ePixmap pixmap="skin_default/buttons/red.png" position="20,5" size="290,50" alphatest="blend" />
+		<widget source="key_red" render="Label" position="20,5" size="290,50" zPosition="1" font="Regular;26" halign="center" valign="center" backgroundColor="#9f1313" transparent="1" shadowColor="black" shadowOffset="-2,-2" />
+		<eLabel position="20,60" size="1150,2" backgroundColor="grey" />
+		<widget source="menu" render="Listbox" position="20,65" size="1150,765" zPosition="1" enableWrapAround="1" scrollbarMode="showOnDemand" selectionDisabled="1">
+			<convert type="TemplatedMultiContent">{"template": [  MultiContentEntryText(pos = (10,0), size = (370,45), flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 0),
+				MultiContentEntryText(pos = (390,0), size = (730,45), flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 1)],
+				"fonts": [gFont("Regular", 30)],
+				"itemHeight": 45 }</convert>
+		</widget>
+	</screen>
+</skin>

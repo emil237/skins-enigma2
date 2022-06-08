@@ -1,0 +1,337 @@
+
+<skin>
+	<!-- LCD/OLED Screens -->
+	<!-- LCD screen (channelselection) -->
+	<screen name="ChannelSelection_summary" position="0,0" size="132,64" id="1">
+		<widget source="parent.ServiceEvent" render="Label" position="6,0" size="120,32" font="Display;16" halign="center" valign="center">
+			<convert type="ServiceName">Name</convert>
+		</widget>
+		<widget source="parent.ServiceEvent" render="Progress" position="16,34" size="100,6" borderWidth="1">
+			<convert type="EventTime">Progress</convert>
+		</widget>
+		<widget source="global.CurrentTime" render="Label" position="5,40" size="75,24" font="Display;24" halign="right" valign="top">
+			<convert type="ClockToText">Format:%H:%M</convert>
+		</widget>
+		<widget source="global.CurrentTime" render="Label" position="81,40" size="30,24" font="Display;19" valign="top">
+			<convert type="ClockToText">Format::%S</convert>
+		</widget>
+	</screen>
+	
+	<!-- LCD screen (main) -->
+	<screen name="InfoBarSummary" position="0,0" size="132,64" id="1">
+		<widget source="session.CurrentService" render="Label" position="6,0" size="120,32" font="Display;16" halign="center" valign="center">
+			<convert type="ServiceName">Name</convert>
+		</widget>
+		<widget source="session.Event_Now" render="Progress" position="16,34" size="100,6" borderWidth="1">
+			<convert type="EventTime">Progress</convert>
+		</widget>
+		<widget source="global.CurrentTime" render="Label" position="5,40" size="75,24" font="Display;24" halign="right" valign="top">
+			<convert type="ClockToText">Format:%H:%M</convert>
+		</widget>
+		<widget source="global.CurrentTime" render="Label" position="81,40" size="30,24" font="Display;19" valign="top">
+			<convert type="ClockToText">Format::%S</convert>
+		</widget>
+		<widget source="session.RecordState" render="FixedLabel" position="0,40" size="132,24" zPosition="1" text=" ">
+			<convert type="ConfigEntryTest">config.usage.blinking_display_clock_during_recording,True,CheckSourceBoolean</convert>
+			<convert type="ConditionalShowHide">Blink</convert>
+		</widget>
+	</screen>
+	
+	<!-- LCD screen (movieplayer) -->
+	<screen name="InfoBarMoviePlayerSummary" position="0,0" size="132,64" id="1">
+		<widget source="session.CurrentService" render="Label" position="6,0" size="120,32" font="Display;16" halign="center" valign="center">
+			<convert type="ServiceName">Name</convert>
+		</widget>
+		<widget source="session.CurrentService" render="Progress" position="16,34" size="100,6" borderWidth="1">
+			<convert type="ServicePosition">Position</convert>
+		</widget>
+		<widget source="global.CurrentTime" render="Label" position="6,40" size="120,24" font="Display;24" halign="center" valign="center">
+			<convert type="ClockToText">Format:%H:%M</convert>
+		</widget>
+		<widget source="session.RecordState" render="FixedLabel" text=" " position="6,40" zPosition="1" size="120,24">
+			<convert type="ConfigEntryTest">config.usage.blinking_display_clock_during_recording,True,CheckSourceBoolean</convert>
+			<convert type="ConditionalShowHide">Blink</convert>
+		</widget>
+	</screen>
+	
+	<!-- LCD screen (ChoiceBox) -->
+	<screen name="ChoiceBox_summary" zPosition="9999" position="0,0" size="132,64" id="1">
+		<widget source="parent.summary_list" render="Label" position="6,0" size="126,64" font="Display;11" />
+	</screen>
+	
+	<!-- LCD screen (MessageBox) -->
+	<screen name="MessageBox_summary" position="0,0" size="132,64" id="1">
+		<widget source="parent.Text" render="Label" position="0,0" size="132,52" font="Display;11" halign="center" valign="center" />
+		<widget source="parent.selectedChoice" render="Label" position="6,50" size="120,14" font="Display;14" halign="center" valign="center" />
+	</screen>
+	
+	<!-- LCD screen (menus) -->
+	<screen name="MenuSummary" position="0,0" size="132,64" id="1">
+		<widget source="parent.title" render="Label" position="6,0" size="120,30" font="Display;14" halign="center" valign="center" />
+		<widget source="parent.menu" render="Label" position="6,30" size="120,34" font="Display;16" halign="center" valign="center">
+			<convert type="StringListSelection" />
+		</widget>
+	</screen>
+	
+	<!-- LCD screen (ServiceScan) -->
+	<screen name="ServiceScanSummary" position="0,0" size="132,64" id="1">
+		<widget name="Title" position="6,4" size="120,42" font="Display;16" transparent="1" />
+		<widget name="Service" position="6,22" size="120,26" font="Display;12" transparent="1" />
+		<widget name="scan_progress" position="6,50" borderWidth="1" size="120,12" backgroundColor="background" />
+	</screen>
+	
+	<!-- LCD screen (setup) -->
+	<screen name="SetupSummary" position="0,0" size="132,64" id="1">
+		<widget source="SetupTitle" render="Label" position="6,0" size="120,24" halign="left" font="Display;12" />
+		<widget source="SetupEntry" render="Label" position="6,24" size="120,24" halign="center" font="Display;12" />
+		<widget source="SetupValue" render="Label" position="6,48" size="120,16" halign="right" font="Display;12" />
+	</screen>
+	
+	<!-- LCD screen (misc) -->
+	<screen name="SimpleSummary" position="0,0" size="132,64" id="1">
+		<widget source="parent.Title" render="Label" position="6,0" size="120,64" font="Display;16" halign="center" valign="center" />
+	</screen>
+	
+	<!-- LCD screen (standby) -->
+	<screen name="StandbySummary" position="0,0" size="132,64" id="1">
+		<widget source="global.CurrentTime" render="Label" position="6,0" size="120,64" font="Display;40" halign="center" valign="center">
+			<convert type="ClockToText">Format:%H:%M</convert>
+		</widget>
+		<widget source="session.RecordState" render="FixedLabel" position="6,0" zPosition="1" size="120,64" text=" ">
+			<convert type="ConfigEntryTest">config.usage.blinking_display_clock_during_recording,True,CheckSourceBoolean</convert>
+			<convert type="ConditionalShowHide">Blink</convert>
+		</widget>
+	</screen>
+	
+	<!-- LCD screen (JobView) -->
+	<screen name="JobView_summary" position="0,0" size="132,64" id="1">
+		<widget source="parent.summary_job_name" render="Label" position="6,4" size="120,42" font="Display;16" />
+		<widget source="parent.summary_job_task" render="Label" position="6,22" size="120,26" font="Display;12" />
+		<widget source="parent.summary_job_progress" render="Progress" position="6,50" size="60,12" borderWidth="1" zPosition="1" />
+		<widget source="parent.summary_job_progress" render="Label" position="66,50" size="50,12" font="Display;12" zPosition="2" halign="center" transparent="1">
+			<convert type="ProgressToText" />
+		</widget>
+	</screen>
+	
+	<!-- LCD screen (Wizard) -->
+	<screen name="WizardSummary" position="0,0" size="132,64" id="1">
+		<widget source="text" render="Label" position="6,0" size="120,16" font="Display;16" transparent="1" />
+		<widget source="parent.list" render="Label" position="6,18" size="120,46" font="Display;12">
+			<convert type="StringListSelection" />
+		</widget>
+	</screen>
+	
+	<!-- COLOR LCD DM900lcd -->
+
+	<!-- Color LCD screen (channelselection) -->
+	<screen name="ChannelSelection_summary" position="0,0" size="400,240" id="3">
+		<ePixmap position="0,0" size="400,240" pixmap="display_bg.png" zPosition="-1" />
+
+		<widget alphatest="blend" position="11,0" render="Picon" size="300,216" source="parent.Service" zPosition="5">
+			<convert type="ServiceName">Reference</convert>
+		</widget>
+		<widget source="parent.ServiceEvent" render="Progress" position="8,216" size="384,20" borderWidth="1" pixmap="NitroFHD/progressLCD.png" backgroundColor="#333633">
+			<convert type="EventTime">Progress</convert>
+		</widget>
+	</screen>
+	
+	<!-- Color LCD screen (Infobar main) Default -->
+	<screen name="InfoBarSummary" position="0,0" size="400,240" id="3">
+		<ePixmap position="0,0" size="400,240" pixmap="display_bg.png" zPosition="-1" />
+		<!-- Channellogo (Picon) -->
+		<widget source="session.CurrentService" render="Picon" position="5,0" zPosition="1" size="200,120" alphatest="on">
+			<convert type="ServiceName">Reference</convert>
+		</widget>
+		<!-- Service Number-->
+		<!-- <widget render="newnigma2ChNumber" font="Bold;75" foregroundColor="Nitro3" backgroundColor="black" position="200,0" size="200,120" source="session.CurrentService" transparent="1" valign="center" halign="center" /> -->
+		<widget render="Label" font="Bold;75" foregroundColor="Nitro3" backgroundColor="black" position="200,0" size="200,120" source="session.CurrentService" transparent="1" valign="center" halign="center">
+			<convert type="ServiceName2">Number</convert>
+		</widget>
+		<widget source="session.Event_Now" render="Progress" position="8,130" size="390,20" borderWidth="1" pixmap="progressLCD.png" backgroundColor="#191a19">
+			<convert type="EventTime">Progress</convert>
+		</widget>
+		<widget font="Nitro_L;100" foregroundColor="Nitro3" backgroundColor="black" halign="center" position="0,150" render="Label" size="400,90" source="global.CurrentTime" transparent="1" valign="center">
+			<convert type="ClockToText">Format:%H:%M</convert>
+		</widget>
+	</screen>
+	
+	<!-- Color LCD screen (movieplayer) -->
+	<screen name="InfoBarMoviePlayerSummary" position="0,0" size="400,240" id="3">
+		<ePixmap position="0,0" size="400,240" pixmap="display_bg.png" zPosition="-1" />
+		<widget source="session.CurrentService" render="Label" position="center,5" size="400,92" font="Display;48" foregroundColor="green2" halign="center" valign="center" transparent="1">
+			<convert type="ServiceName">Name</convert>
+		</widget>
+		<widget source="session.CurrentService" render="Progress" position="center,112" size="380,15" borderWidth="1" pixmap="progress.png" backgroundColor="background">
+			<convert type="ServicePosition">Position</convert>
+		</widget>
+		<widget source="global.CurrentTime" render="Label" position="center,146" size="400,84" font="Display;80" foregroundColor="Nitro3" halign="center" valign="center" transparent="1">
+			<convert type="ClockToText">Format:%H:%M</convert>
+		</widget>
+	</screen>
+	
+	<!-- Color LCD screen (PluginBrowserSummary) -->
+	<screen name="PluginBrowserSummary" position="0,0" size="400,240" id="3">
+		<ePixmap position="0,0" size="400,240" pixmap="display_bg.png" zPosition="-1" />
+		<widget source="parent.pluginlist" render="Label" position="center,5" size="400,92" font="Display;48" foregroundColor="green2" halign="center" valign="top" transparent="1">
+			<convert type="StringListSelection">1</convert>
+		</widget>
+		<widget source="parent.pluginlist" render="Label" position="center,105" size="400,132" font="Display;36" foregroundColor="Nitro3" halign="center" valign="top" transparent="1">
+			<convert type="StringListSelection">2</convert>
+		</widget>
+	</screen>
+	
+	<!-- Color LCD screen (MoviePlayer) -->
+	<screen name="MoviePlayer_summary" position="0,0" size="400,240" id="3">
+		<ePixmap position="0,0" size="400,240" pixmap="display_bg.png" zPosition="-1" />
+		<widget source="session.CurrentService" render="Label" position="center,5" size="400,92" font="Display;48" foregroundColor="green2" halign="center" valign="center" transparent="1">
+			<convert type="ServiceName">Name</convert>
+		</widget>
+		<widget source="session.CurrentService" render="Progress" position="center,112" size="380,15" borderWidth="1" pixmap="progressLCD.png" backgroundColor="background">
+			<convert type="ServicePosition">Position</convert>
+		</widget>
+		<widget source="session.CurrentService" render="Label" position="center,146" size="400,84" font="Display;80" halign="center" valign="center" transparent="1">
+			<convert type="ServicePosition">Position</convert>
+		</widget>
+	</screen>
+	
+	<screen name="AudioPlayer_summary" position="0,0" size="400,240" id="3">
+		<ePixmap position="0,0" size="400,240" pixmap="display_bg.png" zPosition="-1" />
+		<widget source="session.CurrentService" render="Label" position="center,5" size="400,92" font="Display;48" foregroundColor="green2" halign="center" valign="center" transparent="1">
+			<convert type="ServiceName">Name</convert>
+		</widget>
+		<widget source="session.CurrentService" render="Progress" position="center,112" size="380,15" borderWidth="1" pixmap="progressLCD.png" backgroundColor="background">
+			<convert type="ServicePosition">Position</convert>
+		</widget>
+		<widget source="session.CurrentService" render="Label" position="center,146" size="400,84" font="Display;80" halign="center" valign="center" transparent="1">
+			<convert type="ServicePosition">Position</convert>
+		</widget>
+	</screen>
+	
+	<!-- Color LCD screen (MediaBrowser) -->
+	<screen name="MediaBrowser_summary" position="0,0" size="400,240" id="3">
+		<ePixmap position="0,0" size="400,240" pixmap="display_bg.png" zPosition="-1" />
+		<widget source="parent.summary_list" render="Label" position="0,5" size="400,220" font="Display;60" foregroundColor="green2" halign="center" valign="center" transparent="1" />
+	</screen>
+	
+	<!-- Color LCD screen (NetworkServiceConfig) -->
+	<screen name="NetworkServiceConfig_summary" position="0,0" size="400,240" id="3">
+		<ePixmap position="0,0" size="400,240" pixmap="display_bg.png" zPosition="-1" />
+		<widget source="parent.Title" render="Label" position="0,5" size="400,48" font="Display;48" foregroundColor="green2" halign="center" valign="top" transparent="1" />
+		<widget source="parent.summary_list" render="Label" position="0,60" size="400,170" font="Display;44" halign="center" valign="center" transparent="1" />
+	</screen>
+	
+	<!-- Color LCD screen (ChoiceBox) -->
+	<screen name="ChoiceBox_summary" position="0,0" size="400,240" id="3">
+		<ePixmap position="0,0" size="400,240" pixmap="display_bg.png" zPosition="-1" />
+		<widget source="parent.summary_list" render="Label" position="0,5" size="400,225" font="Display;32" foregroundColor="green2" halign="center" transparent="1" />
+	</screen>
+	
+	<!-- Color LCD screen (MessageBox) -->
+	<screen name="MessageBox_summary" position="0,0" size="400,240" id="3">
+		<ePixmap position="0,0" size="400,240" pixmap="display_bg.png" zPosition="-1" />
+		<widget source="parent.Text" render="Label" position="0,5" size="400,176" font="Display;44" foregroundColor="green2" halign="center" valign="top" transparent="1" />
+		<widget source="parent.selectedChoice" render="Label" position="0,184" size="400,44" font="Display;44" foregroundColor="Nitro3" halign="center" valign="center" transparent="1" />
+	</screen>
+	
+	<!-- Color LCD screen (menus) -->
+	<screen name="MenuSummary" position="0,0" size="400,240" id="3">
+		<ePixmap position="0,0" size="400,240" pixmap="display_bg.png" zPosition="-1" />
+		<widget source="parent.title" render="Label" position="0,5" size="400,48" font="Display;48" foregroundColor="green2" halign="center" valign="top" transparent="1" />
+		<widget source="parent.menu" render="Label" position="0,12" size="400,220" font="Display;60" foregroundColor="Nitro3" halign="center" valign="center" transparent="1">
+			<convert type="StringListSelection" />
+		</widget>
+	</screen>
+	
+	<!-- Color LCD screen (ServiceScan) -->
+	<screen name="ServiceScanSummary" position="0,0" size="400,240" id="3">
+		<ePixmap position="0,0" size="400,240" pixmap="display_bg.png" zPosition="-1" />
+		<widget name="Title" render="Label" position="0,5" size="400,48" font="Display;48" foregroundColor="green2" halign="center" valign="top" transparent="1" />
+		<widget name="Service" render="Label" position="0,65" size="400,100" font="Display;48" foregroundColor="Nitro3" halign="center" valign="center" transparent="1" />
+		<widget name="scan_progress" position="center,190" zPosition="1" borderWidth="1" size="380,15" pixmap="progress.png" backgroundColor="background" />
+	</screen>
+	
+	<!-- Color LCD screen (setup) -->
+	<screen name="SetupSummary" position="0,0" size="400,240" id="3">
+		<ePixmap position="0,0" size="400,240" pixmap="display_bg.png" zPosition="-1" />
+		<widget source="SetupTitle" render="Label" position="0,5" size="400,88" halign="center" font="Display;48" foregroundColor="green2" transparent="1" />
+		<widget source="SetupEntry" render="Label" position="0,98" size="400,78" halign="left" font="Display;42" foregroundColor="Nitro3" transparent="1" />
+		<widget source="SetupValue" render="Label" position="0,181" size="400,39" halign="right" font="Display;42" foregroundColor="green2" transparent="1" />
+	</screen>
+	
+	<!-- Color LCD screen (SimpleSummary) -->
+	<screen name="SimpleSummary" position="0,0" size="400,240" id="3">
+		<ePixmap position="0,0" size="400,240" pixmap="display_bg.png" zPosition="-1" />
+		<widget source="parent.Title" render="Label" position="0,5" size="400,220" font="Display;48" foregroundColor="green2" halign="center" valign="center" transparent="1" />
+	</screen>
+	
+	<!-- Color LCD screen (standby) -->
+	<screen name="StandbySummary" position="0,0" size="400,240" id="3">
+		<ePixmap position="0,0" size="400,240" pixmap="display_bg.png" zPosition="-1" />
+		<!-- Weather Info  -->
+		<widget alphatest="on" position="0,5" render="MSNWeatherPixmap" size="150,150" source="session.MSNWeather" transparent="1" zPosition="5">
+			<convert type="MSNWeather">weathericon,current</convert>
+		</widget>
+		<widget backgroundColor="black" font="Nitro_L; 73" foregroundColor="Nitro3" halign="center" noWrap="1" position="150,0" render="Label" size="250,140" source="session.MSNWeather" transparent="1" valign="center" zPosition="3">
+			<convert type="MSNWeather">temperature_current</convert>
+		</widget>
+		<eLabel position="0,150" size="400,1" backgroundColor="redB" />
+		<widget font="Nitro_L;100" foregroundColor="Nitro3" backgroundColor="black" halign="center" position="0,150" render="Label" size="400,90" source="global.CurrentTime" transparent="1" valign="center">
+			<convert type="ClockToText">Format:%H:%M</convert>
+		</widget>
+	</screen>
+	
+	<!-- Color LCD screen (Channelselection Radio) -->
+	<screen name="ChannelSelectionRadio_summary" position="0,0" size="400,240" id="3">
+		<ePixmap position="0,0" size="400,240" pixmap="display_bg.png" zPosition="-1" />
+		<widget source="session.CurrentService" render="Label" position="center,5" size="400,48" font="Display;48" halign="center" valign="center" transparent="1">
+			<convert type="ServiceName">Name</convert>
+		</widget>
+		<widget source="parent.RdsDecoder" render="Label" position="center,55" size="400,45" font="Display;24" foregroundColor="Nitro3" halign="center" valign="center" transparent="1">
+			<convert type="RdsInfo">RadioText</convert>
+		</widget>
+		<widget source="session.Event_Now" render="Progress" position="center,112" size="380,15" borderWidth="1" pixmap="progressLCD.png" backgroundColor="black">
+			<convert type="EventTime">Progress</convert>
+		</widget>
+		<widget source="global.CurrentTime" render="Label" position="center,146" size="400,84" font="Display;80" foregroundColor="green2" halign="center" valign="center" transparent="1">
+			<convert type="ClockToText">Format:%H:%M</convert>
+		</widget>
+	</screen>
+	
+	<!-- Color LCD screen (InternetRadio) -->
+	<screen name="InternetRadioOledDisplay" backgroundColor="#00000000" position="0,0" size="400,240" id="3">
+		<widget name="text1" zPosition="1" position="0,5" size="400,40" font="Regular;28" halign="center" valign="center" foregroundColor="#fcc000" backgroundColor="#00000000" />
+		<widget name="text2" zPosition="1" position="0,45" size="400,195" font="Regular;32" halign="center" valign="center" foregroundColor="#fcc000" backgroundColor="#00000000" />
+		<widget name="progress_0" zPosition="3" position="30,30" size="20,200" transparent="1" orientation="orBottomToTop" pixmap="nitrofhd-oealliance/images/equBars.png" />
+		<widget name="progress_1" zPosition="3" position="51,30" size="20,200" transparent="1" orientation="orBottomToTop" pixmap="nitrofhd-oealliance/images/equBars.png" />
+		<widget name="progress_2" zPosition="3" position="72,30" size="20,200" transparent="1" orientation="orBottomToTop" pixmap="nitrofhd-oealliance/images/equBars.png" />
+		<widget name="progress_3" zPosition="3" position="93,30" size="20,200" transparent="1" orientation="orBottomToTop" pixmap="nitrofhd-oealliance/images/equBars.png" />
+		<widget name="progress_4" zPosition="3" position="114,30" size="20,200" transparent="1" orientation="orBottomToTop" pixmap="nitrofhd-oealliance/images/equBars.png" />
+		<widget name="progress_5" zPosition="3" position="135,30" size="20,200" transparent="1" orientation="orBottomToTop" pixmap="nitrofhd-oealliance/images/equBars.png" />
+		<widget name="progress_6" zPosition="3" position="156,30" size="20,200" transparent="1" orientation="orBottomToTop" pixmap="nitrofhd-oealliance/images/equBars.png" />
+		<widget name="progress_7" zPosition="3" position="177,30" size="20,200" transparent="1" orientation="orBottomToTop" pixmap="nitrofhd-oealliance/images/equBars.png" />
+		<widget name="progress_8" zPosition="3" position="198,30" size="20,200" transparent="1" orientation="orBottomToTop" pixmap="nitrofhd-oealliance/images/equBars.png" />
+		<widget name="progress_9" zPosition="3" position="219,30" size="20,200" transparent="1" orientation="orBottomToTop" pixmap="nitrofhd-oealliance/images/equBars.png" />
+		<widget name="progress_10" zPosition="3" position="240,30" size="20,200" transparent="1" orientation="orBottomToTop" pixmap="nitrofhd-oealliance/images/equBars.png" />
+		<widget name="progress_11" zPosition="3" position="261,30" size="20,200" transparent="1" orientation="orBottomToTop" pixmap="nitrofhd-oealliance/images/equBars.png" />
+		<widget name="progress_12" zPosition="3" position="282,30" size="20,200" transparent="1" orientation="orBottomToTop" pixmap="nitrofhd-oealliance/images/equBars.png" />
+		<widget name="progress_13" zPosition="3" position="303,30" size="20,200" transparent="1" orientation="orBottomToTop" pixmap="nitrofhd-oealliance/images/equBars.png" />
+		<widget name="progress_14" zPosition="3" position="324,30" size="20,200" transparent="1" orientation="orBottomToTop" pixmap="nitrofhd-oealliance/images/equBars.png" />
+		<widget name="progress_15" zPosition="3" position="345,30" size="20,200" transparent="1" orientation="orBottomToTop" pixmap="nitrofhd-oealliance/images/equBars.png" />
+		<widget name="top_0" position="30,30" zPosition="6" size="20,8" transparent="1" pixmap="nitrofhd-oealliance/images/equTbar.png" />
+		<widget name="top_1" position="51,30" zPosition="6" size="20,8" transparent="1" pixmap="nitrofhd-oealliance/images/equTbar.png" />
+		<widget name="top_2" position="72,30" zPosition="6" size="20,8" transparent="1" pixmap="nitrofhd-oealliance/images/equTbar.png" />
+		<widget name="top_3" position="93,30" zPosition="6" size="20,8" transparent="1" pixmap="nitrofhd-oealliance/images/equTbar.png" />
+		<widget name="top_4" position="114,30" zPosition="6" size="20,8" transparent="1" pixmap="nitrofhd-oealliance/images/equTbar.png" />
+		<widget name="top_5" position="135,30" zPosition="6" size="20,8" transparent="1" pixmap="nitrofhd-oealliance/images/equTbar.png" />
+		<widget name="top_6" position="156,30" zPosition="6" size="20,8" transparent="1" pixmap="nitrofhd-oealliance/images/equTbar.png" />
+		<widget name="top_7" position="177,30" zPosition="6" size="20,8" transparent="1" pixmap="nitrofhd-oealliance/images/equTbar.png" />
+		<widget name="top_8" position="198,30" zPosition="6" size="20,8" transparent="1" pixmap="nitrofhd-oealliance/images/equTbar.png" />
+		<widget name="top_9" position="219,30" zPosition="6" size="20,8" transparent="1" pixmap="nitrofhd-oealliance/images/equTbar.png" />
+		<widget name="top_10" position="240,30" zPosition="6" size="20,8" transparent="1" pixmap="nitrofhd-oealliance/images/equTbar.png" />
+		<widget name="top_11" position="261,30" zPosition="6" size="20,8" transparent="1" pixmap="nitrofhd-oealliance/images/equTbar.png" />
+		<widget name="top_12" position="282,30" zPosition="6" size="20,8" transparent="1" pixmap="nitrofhd-oealliance/images/equTbar.png" />
+		<widget name="top_13" position="303,30" zPosition="6" size="20,8" transparent="1" pixmap="nitrofhd-oealliance/images/equTbar.png" />
+		<widget name="top_14" position="324,30" zPosition="6" size="20,8" transparent="1" pixmap="nitrofhd-oealliance/images/equTbar.png" />
+		<widget name="top_15" position="345,30" zPosition="6" size="20,8" transparent="1" pixmap="nitrofhd-oealliance/images/equTbar.png" />
+	</screen>
+</skin>

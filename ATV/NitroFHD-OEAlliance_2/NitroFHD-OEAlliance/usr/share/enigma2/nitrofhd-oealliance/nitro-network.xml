@@ -1,0 +1,149 @@
+
+<skin>
+	<!-- missing NetworkAdapterSelection -->
+	<!-- missing NameserverSetup -->
+	<!-- missing NetworkMacSetup -->
+	<!-- missing AdapterSetup -->
+	<!-- missing AdapterSetupConfiguration -->
+	<!-- missing NetworkAdapterTest -->
+	<!-- missing NetworkMountsMenu -->
+	<!-- missing NetworkAfp-->
+	<!-- missing NetworkSABnzbd -->
+	<!-- missing NetworkFtp -->
+	<!-- missing NetworkNfs -->
+	<!-- missing NetworkOpenvpn -->
+	<!-- missing NetworkServiceSetup -->
+	<!-- missing NetworkSamba -->
+	<!-- missing NetworkInadynLog-->
+	<!-- missing NetworkInadyn -->
+	<!-- missing NetworkInadynSetup -->
+	<!-- missing NetworkuShare -->
+	<!-- missing NetworkuShareSetup -->
+	<!-- missing uShareSelection -->
+	<!-- missing NetworkMiniDLNA -->
+	<!-- missing NetworkMiniDLNASetup -->
+	<!-- missing MiniDLNASelection -->
+	<!-- missing ScanIP -->
+	<!-- missing WlanScan -->
+	<!-- missing WlanStatus -->
+	
+	<!-- system - network - mounts setup - Mount Manager -->
+	<screen name="AutoMountManager" position="center,111" size="1400,880" title="AutoMountManager">
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/red.png" position="188,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/green.png" position="488,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/yellow.png" position="788,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/blue.png" position="1088,833" size="300,40" alphatest="blend" />
+		<widget source="key_red" render="Label" position="188,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget source="config" render="Listbox" position="11,0" size="1379,720" scrollbarMode="showNever" transparent="0" backgroundColor="background">
+			<convert type="TemplatedMultiContent">{"template": [
+						MultiContentEntryText(pos = (100, 1), size = (1250, 40), font=0, flags = RT_HALIGN_LEFT, text = 0, color=0xfbfbfb), # index 2 is the Menu Titel
+						MultiContentEntryText(pos = (110, 42), size = (1240, 38), font=1, flags = RT_HALIGN_LEFT, text = 2, color=0xc4c4c4), # index 3 is the Description
+						MultiContentEntryPixmapAlphaTest(pos = (6, 8), size = (64, 64), png = 3), # index 4 is the pixmap
+					],
+				"fonts": [gFont("Regular", 30),gFont("Regular", 26)],
+				"itemHeight": 80
+				}</convert>
+		</widget>
+		<widget source="introduction" render="Label" position="11,740" size="1379,60" font="Regular;28" halign="center" transparent="1" />
+	</screen>
+	
+	<screen name="AutoMountEdit" position="center,111" size="1400,880" title="MountEdit">
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/red.png" position="188,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/green.png" position="488,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/yellow.png" position="788,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/blue.png" position="1088,833" size="300,40" alphatest="blend" />
+		<widget source="key_red" render="Label" position="188,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget name="config" position="11,0" zPosition="2" size="1379,720" scrollbarMode="showNever" transparent="0" backgroundColor="background" textOffset="20,0" font="Regular;30" secondfont="Regular;27" />
+		<widget name="VKeyIcon" position="11,838" size="70,30" pixmap="icons/text.svg" alphatest="blend" />
+		<widget name="HelpWindow" position="center,800" zPosition="1" size="1,1" />
+		<widget source="introduction" render="Label" position="11,740" size="1379,80" font="Regular;28" halign="center" transparent="1" />
+	</screen>
+	
+	<!-- system - network - mounts setup - Mount Manager - MountPoints management-->
+	<screen name="AutoMountView" position="center,111" size="1400,880" title="MountView">
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/red.png" position="188,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/green.png" position="488,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/yellow.png" position="788,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/blue.png" position="1088,833" size="300,40" alphatest="blend" />
+		<widget source="key_red" render="Label" position="188,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget source="key_yellow" render="Label" position="788,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget source="legend1" render="Label" position="11,0" zPosition="1" size="300,80" font="Regular;25" halign="center" valign="center" foregroundColor="foreground" />
+		<widget source="legend2" render="Label" position="400,0" zPosition="1" size="800,80" font="Regular;28" halign="center" valign="center" foregroundColor="foreground" />
+		<widget source="legend3" render="Label" position="1200,0" zPosition="1" size="200,80" font="Regular;26" halign="center" valign="center" foregroundColor="foreground" />
+		<eLabel position="11,83" size="1379,1" backgroundColor="grey" />
+		<widget source="config" render="Listbox" position="11,100" size="1379,640" scrollbarMode="showNever" transparent="1" backgroundColor="background">
+			<convert type="TemplatedMultiContent">{"template": [
+						MultiContentEntryPixmapAlphaTest(pos = (20, 6), size = (68, 68), png = 0), # index 0 is the isMounted pixmap
+						MultiContentEntryText(pos = (200, 5), size = (300, 38), font=0, flags = RT_HALIGN_LEFT, text = 1), # index 1 is the sharename
+						MultiContentEntryText(pos = (550, 8), size = (250, 30), font=1, flags = RT_HALIGN_LEFT, text = 2), # index 2 is the IPdescription
+						MultiContentEntryText(pos = (200, 46), size = (820, 30), font=1, flags = RT_HALIGN_LEFT, text = 3), # index 3 is the DIRdescription
+						MultiContentEntryPixmapAlphaTest(pos = (1120, 16), size = (68, 48), png = 4), # index 4 is the activepng pixmap
+						MultiContentEntryPixmapAlphaTest(pos = (1220, 16), size = (68, 48), png = 5), # index 4 is the mounttype pixmap
+					],
+				"fonts": [gFont("Regular", 30),gFont("Regular", 28)],
+				"itemHeight": 80
+				}</convert>
+		</widget>
+		<widget source="introduction" render="Label" position="11,740" size="1379,60" font="Regular;28" halign="center" transparent="1" />
+	</screen>
+	
+	<!-- system - network - mounts setup - Mount Manager - user management-->
+	<screen name="UserManager" position="center,111" size="1400,880" title="UserManager">
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/red.png" position="188,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/green.png" position="488,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/yellow.png" position="788,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/blue.png" position="1088,833" size="300,40" alphatest="blend" />
+		<widget source="key_red" render="Label" position="188,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget source="key_yellow" render="Label" position="788,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget source="config" render="Listbox" position="11,0" size="1379,700" scrollbarMode="showNever" transparent="0" backgroundColor="background">
+			<convert type="TemplatedMultiContent">{"template": [
+						MultiContentEntryText(pos = (80, 7), size = (1090, 55), font=0, flags = RT_HALIGN_LEFT, text = 0), # index 0 is the name
+						MultiContentEntryPixmapAlphaTest(pos = (10, 6), size = (58, 58), png = 3), # index 4 is the status pixmap
+					],
+				"fonts": [gFont("Regular", 40)],
+				"itemHeight": 70
+				}</convert>
+		</widget>
+		<widget source="introduction" render="Label" position="11,740" size="1379,40" font="Regular;28" halign="center" transparent="1" />
+	</screen>
+	
+	<screen name="UserDialog" position="center,111" size="1400,880" title="UserDialog">
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/red.png" position="188,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/green.png" position="488,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/yellow.png" position="788,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/blue.png" position="1088,833" size="300,40" alphatest="blend" />
+		<widget source="key_red" render="Label" position="188,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget name="config" position="11,0" zPosition="2" size="1379,720" scrollbarMode="showNever" transparent="0" backgroundColor="background" textOffset="20,0" font="Regular;30" secondfont="Regular;27" itemHeight="40" />
+		<widget name="VKeyIcon" position="11,20" size="70,30" pixmap="icons/text.png" alphatest="blend" />
+		<widget name="HelpWindow" position="center,800" zPosition="1" size="1,1" />
+		<widget source="introduction" render="Label" position="11,740" size="1379,80" font="Regular;28" halign="center" transparent="1" />
+	</screen>
+	
+	<!-- system - network - mounts setup - network browser -->
+	<screen name="NetworkBrowser" position="center,111" size="1400,880" title="Network Neighbourhood">
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/red.png" position="188,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/green.png" position="488,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/yellow.png" position="788,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/blue.png" position="1088,833" size="300,40" alphatest="blend" />
+		<widget source="key_red" render="Label" position="188,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget source="key_green" render="Label" position="488,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget source="key_yellow" render="Label" position="788,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget source="key_blue" render="Label" position="1088,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<!-- Info Text -->
+		<widget source="infotext" render="Label" position="11,0" size="1379,720" zPosition="1" font="Regular;30" halign="center" valign="center" />
+		<!-- List Box -->
+		<widget source="list" render="Listbox" position="11,0" size="1379,720" zPosition="2" enableWrapAround="1" scrollbarMode="showOnDemand">
+			<convert type="TemplatedMultiContent">{"template": [
+				MultiContentEntryPixmapAlphaTest(pos=(10,5),size=(70,70),png=1),# index 1 is the expandable/expanded/verticalline icon
+				MultiContentEntryText(pos=(100,7),size=(1000,33),font=2,flags=RT_HALIGN_LEFT,text=2),# index 2 is the Hostname
+				MultiContentEntryText(pos=(280,5),size=(910,30),font=0,flags=RT_HALIGN_LEFT,text=3),# index 3 is the sharename
+				MultiContentEntryText(pos=(280,45),size=(910,30),font=1,flags=RT_HALIGN_LEFT,text=4),# index 4 is the sharedescription
+				MultiContentEntryPixmapAlphaTest(pos=(100,5),size=(70,70),png=5),# index 5 is the nfs/cifs icon
+				MultiContentEntryPixmapAlphaTest(pos=(180,5),size=(70,70),png=6),# index 6 is the isMounted icon
+				],
+				"fonts": [gFont("Regular",30),gFont("Regular",28),gFont("Regular",32)],
+				"itemHeight": 80
+				}</convert>
+		</widget>
+	</screen>
+</skin>

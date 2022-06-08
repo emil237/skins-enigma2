@@ -1,0 +1,20 @@
+
+<skin>
+	<!-- Service info -->
+	<screen name="ServiceInfoSimple" position="center,111" size="1400,880" title="Service Info">
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/red.png" position="188,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/green.png" position="488,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/yellow.png" position="788,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/blue.png" position="1088,833" size="300,40" alphatest="blend" />
+		<widget name="red" position="188,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget name="green" position="488,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget name="yellow" position="788,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget name="blue" position="1088,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget name="infolist" position="11,0" size="1260,800" itemHeight="40" selectionDisabled="1" />
+	</screen>
+	
+	<!-- legacy -->
+	<screen name="ServiceInfo" position="0,0" size="1920,1080" title="Service Information" flags="wfNoBorder" backgroundColor="mid">
+		<panel name="ServiceInfoSimple" />
+	</screen>
+</skin>

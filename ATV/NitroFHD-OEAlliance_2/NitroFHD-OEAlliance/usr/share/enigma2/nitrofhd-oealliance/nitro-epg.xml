@@ -1,0 +1,251 @@
+
+<skin>
+	<!-- EPG Selection - Single -->
+	<screen name="EPGSelection" position="center,111" size="1800,880" title="EPG Selection">
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/red.png" scale="1" position="588,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/green.png" scale="1" position="888,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/yellow.png" scale="1" position="1188,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/blue.png" scale="1" position="1488,833" size="300,40" alphatest="blend" />
+		<widget name="key_red" position="588,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" />
+		<widget name="key_green" position="888,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" />
+		<widget name="key_yellow" position="1188,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" />
+		<widget name="key_blue" position="1488,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" />
+		<eLabel position="20,65" size="1760,1" backgroundColor="redB" zPosition="-2" />
+		<ePixmap pixmap="icons/info.png" position="10,843" size="70,30" alphatest="blend" />
+		<widget name="list" position="20,70" size="1000,760" itemHeight="40" scrollbarMode="showNever" />
+		<widget source="Service" render="Picon" position="20,10" zPosition="5" size="90,50" alphatest="blend" transparent="1">
+			<convert type="ServiceName">Reference</convert>
+		</widget>
+		<widget font="Regular;33" valign="center" foregroundColor="foreground" position="400,10" render="Label" size="1200,50" source="Event">
+			<convert type="EventName">Name</convert>
+		</widget>
+		<widget font="Bold;33" halign="right" position="140,10" render="Label" size="100,50" source="Event" valign="center" foregroundColor="green">
+			<convert type="EventTime">StartTime</convert>
+			<convert type="ClockToText" />
+		</widget>
+		<widget font="Bold;33" position="252,10" render="Label" size="130,50" source="Event" valign="center" foregroundColor="redB">
+			<convert type="EventTime">EndTime</convert>
+			<convert type="ClockToText">Format:- %H:%M</convert>
+		</widget>
+		<widget font="Bold;33" halign="right" position="1610,10" render="Label" size="150,50" source="Event" valign="center" foregroundColor="Nitro2">
+			<convert type="EventTime">Remaining</convert>
+			<convert type="RemainingToText">InMinutes</convert>
+		</widget>
+		<widget font="Regular;28" foregroundColor="selBarForeground" position="1080,70" render="Label" size="700,740" source="Event">
+			<convert type="EventName">FullDescription</convert>
+		</widget>
+	</screen>
+	
+	<!-- Graphical Multi EPG -->
+	<screen name="GraphicalEPG" position="0,0" size="1920,1080" title="Electronic Program Guide" flags="wfNoBorder" backgroundColor="background">
+		<ePixmap pixmap="nitrofhd-oealliance/bs_top.png" position="0,0" size="1920,55" alphatest="blend" scale="1" />
+		<ePixmap pixmap="nitrofhd-oealliance/bs_bottom.png" position="0,1025" size="1920,55" alphatest="blend" scale="1" />
+		<widget source="Title" render="Label" position="40,6" size="800, 50" zPosition="2" font="Nitro_L;34" backgroundColor="Nitro" transparent="1" foregroundColor="background" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/red.png" scale="1" position="638,973" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/green.png" scale="1" position="938,973" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/yellow.png" scale="1" position="1238,973" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/blue.png" scale="1" position="1538,973" size="300,40" alphatest="blend" />
+		<widget name="key_red" position="638,973" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" />
+		<widget name="key_green" position="938,973" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" />
+		<widget name="key_yellow" position="1238,973" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" />
+		<widget name="key_blue" position="1538,973" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" />
+		<widget source="global.CurrentTime" render="Label" position="20,60" size="340,40" font="Regular;28" halign="left" valign="top" zPosition="3">
+			<convert type="ClockToText">Format:%A %d.%B</convert>
+		</widget>
+		<widget name="timeline_text" position="30,60" size="1840,40" zPosition="2" foregroundColor="foreground" />
+		<widget name="list" position="30,100" size="1860,720" itemHeight="40" 
+		
+
+		backgroundColor="background"
+        ServiceFontGraphical="Regular;29"
+		EntryFontGraphical="Regular;29"
+		
+		ServiceForegroundColor="foreground"
+		ServiceForegroundColorNow="foreground"
+		
+		EntryForegroundColor="foreground"
+		EntryForegroundColorSelected="foreground"
+		EntryForegroundColorNow="foreground"
+		EntryForegroundColorNowSelected="foreground"
+		
+		RecordForegroundColor="foreground"
+		RecordForegroundColorSelected="foreground"
+		
+		ZapForegroundColor="foreground"
+		ZapForegroundColorSelected="foreground"
+		
+		ServiceBackgroundColor="background"
+		ServiceBackgroundColorNow="background"
+		
+		EntryBackgroundColor="background"
+		EntryBackgroundColorSelected="#0a3981"
+		
+		EntryBackgroundColorNow="#495a15"
+		EntryBackgroundColorNowSelected="#752626"
+		
+		RecordBackgroundColor="red"
+		RecordBackgroundColorSelected="#0a3981"
+		
+		ZapBackgroundColor="green"
+		ZapBackgroundColorSelected="#0a3981"
+		
+		ServiceBorderColor="grey3"
+		ServiceBorderWidth="1"
+		ServiceNamePadding="15"
+		EntryBorderColor="grey3"
+		EventBorderWidth="1"
+		EventNamePadding="15"
+		NumberOfRows="18"
+
+		scrollbarMode="showNever" transparent="1" zPosition="0" />
+	
+		<widget name="timeline_now" position="30,60" zPosition="3" size="19,765" pixmap="nitrofhd-oealliance/timeline-now.png" alphatest="blend" scale="1" />
+		<widget name="timeline0" position="30,100" size="1,780" pixmap="nitrofhd-oealliance/timeline.png" zPosition="3" />
+		<widget name="timeline1" position="30,100" size="1,780" pixmap="nitrofhd-oealliance/timeline.png" zPosition="3" />
+		<widget name="timeline2" position="30,100" size="1,780" pixmap="nitrofhd-oealliance/timeline.png" zPosition="3" />
+		<widget name="timeline3" position="30,100" size="1,780" pixmap="nitrofhd-oealliance/timeline.png" zPosition="3" />
+		<widget name="timeline4" position="30,100" size="1,780" pixmap="nitrofhd-oealliance/timeline.png" zPosition="3" />
+		<widget name="timeline5" position="30,100" size="1,780" pixmap="nitrofhd-oealliance/timeline.png" zPosition="3" />
+		<eLabel position="398,100" size="1,720" backgroundColor="grey2" zPosition="2" />
+		<eLabel position="30,886" size="1812,1" backgroundColor="Nitro" zPosition="2" />
+		<eLabel position="30,934" size="1812,1" backgroundColor="Nitro" zPosition="2" />
+		<widget source="Event" render="Label" font="Regular; 30" foregroundColor="foreground" position="30,890" size="900,40" transparent="1" backgroundColor="background" halign="left" valign="center" noWrap="1" zPosition="3">
+			<convert type="EventName">Name</convert>
+		</widget>
+		<widget source="Event" render="Label" position="1050,890" size="180,40" font="Regular; 30" noWrap="1" valign="center" zPosition="5" transparent="1" backgroundColor="background">
+			<convert type="EventTime">StartTime</convert>
+			<convert type="ClockToText">Format:%A</convert>
+		</widget>
+		<widget font="Regular; 30" position="1225,890" render="Label" size="100,40" source="Event" transparent="1" backgroundColor="background" halign="right" valign="center" zPosition="5">
+			<convert type="EventTime">StartTime</convert>
+			<convert type="ClockToText" />
+		</widget>
+		<widget font="Regular; 30" position="1745,890" render="Label" size="100,40" source="Event" transparent="1" backgroundColor="background" valign="center" zPosition="5">
+			<convert type="EventTime">EndTime</convert>
+			<convert type="ClockToText">Format: %H:%M</convert>
+		</widget>
+		<widget pixmap="nitrofhd-oealliance/progress_small.png" position="1335,905" render="Progress" size="400,10" source="Event" zPosition="6" transparent="1">
+			<convert type="EventTime">Progress</convert>
+		</widget>
+	</screen>
+	
+		<screen name="GraphicalEPGPIG" position="0,0" size="1920,1080" title="Electronic Program Guide" flags="wfNoBorder" backgroundColor="background">
+		<ePixmap pixmap="nitrofhd-oealliance/bs_top.png" position="0,0" size="1920,55" alphatest="blend" scale="1" />
+		<ePixmap pixmap="nitrofhd-oealliance/bs_bottom.png" position="0,1025" size="1920,55" alphatest="blend" scale="1" />
+		<widget source="Title" render="Label" position="40,6" size="800, 50" zPosition="2" font="Nitro_L;34" backgroundColor="Nitro" transparent="1" foregroundColor="background" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/red.png" scale="1" position="638,973" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/green.png" scale="1" position="938,973" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/yellow.png" scale="1" position="1238,973" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/blue.png" scale="1" position="1538,973" size="300,40" alphatest="blend" />
+		<widget name="key_red" position="638,973" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" />
+		<widget name="key_green" position="938,973" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" />
+		<widget name="key_yellow" position="1238,973" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" />
+		<widget name="key_blue" position="1538,973" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" />
+		<widget source="global.CurrentTime" render="Label" position="20,60" size="340,40" font="Regular;28" halign="left" valign="top" zPosition="3">
+			<convert type="ClockToText">Format:%A %d.%B</convert>
+		</widget>
+		<widget name="timeline_text" position="30,60" size="1840,40" zPosition="2" foregroundColor="foreground" />
+		<widget name="list" position="30,100" size="1860,720" itemHeight="40" 
+		
+
+		backgroundColor="background"
+        ServiceFontGraphical="Regular;29"
+		EntryFontGraphical="Regular;29"
+		
+		ServiceForegroundColor="foreground"
+		ServiceForegroundColorNow="foreground"
+		
+		EntryForegroundColor="foreground"
+		EntryForegroundColorSelected="foreground"
+		EntryForegroundColorNow="foreground"
+		EntryForegroundColorNowSelected="foreground"
+		
+		RecordForegroundColor="foreground"
+		RecordForegroundColorSelected="foreground"
+		
+		ZapForegroundColor="foreground"
+		ZapForegroundColorSelected="foreground"
+		
+		ServiceBackgroundColor="background"
+		ServiceBackgroundColorNow="background"
+		
+		EntryBackgroundColor="background"
+		EntryBackgroundColorSelected="#0a3981"
+		
+		EntryBackgroundColorNow="#495a15"
+		EntryBackgroundColorNowSelected="#752626"
+		
+		RecordBackgroundColor="red"
+		RecordBackgroundColorSelected="#0a3981"
+		
+		ZapBackgroundColor="green"
+		ZapBackgroundColorSelected="#0a3981"
+		
+		ServiceBorderColor="grey3"
+		ServiceBorderWidth="1"
+		ServiceNamePadding="15"
+		EntryBorderColor="grey3"
+		EventBorderWidth="1"
+		EventNamePadding="15"
+		NumberOfRows="18"
+
+		scrollbarMode="showNever" transparent="1" zPosition="0" />
+	
+		<widget name="timeline_now" position="30,60" zPosition="3" size="19,765" pixmap="nitrofhd-oealliance/timeline-now.png" alphatest="blend" scale="1" />
+		<widget name="timeline0" position="30,100" size="1,780" pixmap="nitrofhd-oealliance/timeline.png" zPosition="3" />
+		<widget name="timeline1" position="30,100" size="1,780" pixmap="nitrofhd-oealliance/timeline.png" zPosition="3" />
+		<widget name="timeline2" position="30,100" size="1,780" pixmap="nitrofhd-oealliance/timeline.png" zPosition="3" />
+		<widget name="timeline3" position="30,100" size="1,780" pixmap="nitrofhd-oealliance/timeline.png" zPosition="3" />
+		<widget name="timeline4" position="30,100" size="1,780" pixmap="nitrofhd-oealliance/timeline.png" zPosition="3" />
+		<widget name="timeline5" position="30,100" size="1,780" pixmap="nitrofhd-oealliance/timeline.png" zPosition="3" />
+		<eLabel position="398,100" size="1,720" backgroundColor="grey2" zPosition="2" />
+		<eLabel position="30,886" size="1812,1" backgroundColor="Nitro" zPosition="2" />
+		<eLabel position="30,934" size="1812,1" backgroundColor="Nitro" zPosition="2" />
+		<widget source="Event" render="Label" font="Regular; 30" foregroundColor="foreground" position="30,890" size="900,40" transparent="1" backgroundColor="background" halign="left" valign="center" noWrap="1" zPosition="3">
+			<convert type="EventName">Name</convert>
+		</widget>
+		<widget source="Event" render="Label" position="1050,890" size="180,40" font="Regular; 30" noWrap="1" valign="center" zPosition="5" transparent="1" backgroundColor="background">
+			<convert type="EventTime">StartTime</convert>
+			<convert type="ClockToText">Format:%A</convert>
+		</widget>
+		<widget font="Regular; 30" position="1225,890" render="Label" size="100,40" source="Event" transparent="1" backgroundColor="background" halign="right" valign="center" zPosition="5">
+			<convert type="EventTime">StartTime</convert>
+			<convert type="ClockToText" />
+		</widget>
+		<widget font="Regular; 30" position="1745,890" render="Label" size="100,40" source="Event" transparent="1" backgroundColor="background" valign="center" zPosition="5">
+			<convert type="EventTime">EndTime</convert>
+			<convert type="ClockToText">Format: %H:%M</convert>
+		</widget>
+		<widget pixmap="nitrofhd-oealliance/progress_small.png" position="1335,905" render="Progress" size="400,10" source="Event" zPosition="6" transparent="1">
+			<convert type="EventTime">Progress</convert>
+		</widget>
+	</screen>
+	
+	
+	<!-- missing InfoBarEventView -->
+	<!-- missing GraphicalInfoBarEPG -->
+	
+	<!-- EPG Selection - Multi -->
+	<screen name="EPGSelectionMulti" position="center,111" size="1800,880" title="EPG Selection">
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/red.png" scale="1" position="588,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/green.png" scale="1" position="888,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/yellow.png" scale="1" position="1188,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/blue.png" scale="1" position="1488,833" size="300,40" alphatest="blend" />
+		<widget name="key_red" position="588,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" />
+		<widget name="key_green" position="888,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" />
+		<widget name="key_yellow" position="1188,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" />
+		<widget name="key_blue" position="1488,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" />
+		<widget name="now_button_sel" position="11,15" zPosition="1" size="1780,35" pixmap="nitrofhd-oealliance/epg_now.png" alphatest="blend" scale="1" />
+		<widget name="next_button_sel" position="11,15" zPosition="1" size="1780,35" pixmap="nitrofhd-oealliance/epg_next.png" alphatest="blend" scale="1" />
+		<widget name="more_button_sel" position="11,15" zPosition="1" size="1780,35" pixmap="nitrofhd-oealliance/epg_more.png" alphatest="blend" scale="1" />
+		<widget name="now_text" position="80,19" zPosition="2" size="215,25" text="NOW" font="Bold;22" halign="center" valign="center" backgroundColor="Nitro2" foregroundColor="background2" transparent="1" />
+		<widget name="next_text" position="370,19" zPosition="2" size="215,25" text="NEXT" font="Bold;22" halign="center" valign="center" backgroundColor="Nitro2" foregroundColor="background2" transparent="1" />
+		<widget name="more_text" position="630,19" zPosition="2" size="215,25" text="MORE" font="Bold;22" halign="center" valign="center" backgroundColor="Nitro2" foregroundColor="background2" transparent="1" />
+		<widget name="date" position="980,18" size="190,40" font="Regular;30" valign="center" halign="right" />
+		<widget name="list" position="11,60" size="1780,480" itemHeight="40" scrollbarMode="showNever" />
+		<eLabel position="20,547" size="1760,1" backgroundColor="redB" zPosition="-2" />
+		<widget font="Regular;28" foregroundColor="#aac86a" backgroundColor="background" position="11,560" render="Label" size="1780,270" source="Event" transparent="1">
+			<convert type="EventName">FullDescription</convert>
+		</widget>
+	</screen>
+</skin>

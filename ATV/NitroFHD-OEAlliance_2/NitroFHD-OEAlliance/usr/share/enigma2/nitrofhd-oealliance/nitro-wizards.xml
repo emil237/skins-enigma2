@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- finished -->
+<skin>
+	<!-- Help menu -->
+	<screen name="HelpMenu" position="center,center" size="1200,620" title="help...">
+		<widget name="rc" pixmaps="skin_default/rc0.png,skin_default/rc1.png,skin_default/rc2.png" position="40,50" zPosition="10" size="160,500" alphatest="blend" />
+		<widget name="arrowdown" pixmap="skin_default/arrowdown.png" position="-100,-100" zPosition="11" size="37,70" alphatest="blend" />
+		<widget name="arrowdown2" pixmap="skin_default/arrowdown.png" position="-100,-100" zPosition="11" size="37,70" alphatest="blend" />
+		<widget name="arrowup" pixmap="skin_default/arrowup.png" position="-100,-100" zPosition="11" size="37,70" alphatest="blend" />
+		<widget name="arrowup2" pixmap="skin_default/arrowup.png" position="-100,-100" zPosition="11" size="37,70" alphatest="blend" />
+		<widget name="long_key" position="5,560" size="230,60" font="Regular;23" zPosition="10" halign="center" valign="center" foregroundColor="#e5b243" transparent="1" />
+		<widget name="list" position="280,25" size="880,570" scrollbarMode="showNever" />
+	</screen>
+	
+	<screen name="StartWizard" position="center,70" size="1200,620" title="Welcome...">
+		<ePixmap pixmap="buttons/red.png" position="270,15" size="200,40" alphatest="blend" />
+		<widget name="languagetext" position="270,15" size="200,40" zPosition="1" font="Regular;22" halign="center" valign="center" transparent="1" />
+		<widget name="wizard" position="0,0" size="240,620" />
+		<widget name="rc" position="40,60" size="160,500" zPosition="1" pixmaps="skin_default/rc0.png,skin_default/rc1.png,skin_default/rc2.png" alphatest="blend" />
+		<widget name="arrowdown" position="-100,-100" size="37,70" pixmap="skin_default/arrowdown.png" zPosition="2" alphatest="blend" />
+		<widget name="arrowdown2" position="-100,-100" size="37,70" pixmap="skin_default/arrowdown.png" zPosition="2" alphatest="blend" />
+		<widget name="arrowup" position="-100,-100" size="37,70" pixmap="skin_default/arrowup.png" zPosition="2" alphatest="blend" />
+		<widget name="arrowup2" position="-100,-100" size="37,70" pixmap="skin_default/arrowup.png" zPosition="2" alphatest="blend" />
+		<widget name="text" position="280,70" size="880,240" font="Regular;23" backgroundColor="background" transparent="1" />
+		<widget source="list" render="Listbox" position="280,330" size="880,270" zPosition="1" scrollbarMode="showNever" transparent="1">
+			<convert type="TemplatedMultiContent">{"template": [ MultiContentEntryText(pos = (10, 4), size = (580, 22), flags = RT_HALIGN_LEFT, text = 0) ],
+				"fonts": [gFont("Regular", 20)],
+				"itemHeight": 30
+				}</convert>
+		</widget>
+		<!--
+		<widget source="multicontentlist" render="Listbox" position="280,330" size="880,260" scrollbarMode="showNever">
+			<convert type="TemplatedMultiContent">
+				{"template": [
+						MultiContentEntryText(pos = (90, 11), size = (760, 50), flags = RT_HALIGN_LEFT, text = 1), # index 1 is the language name,
+						MultiContentEntryPixmap(pos = (10, 6), size = (60, 40), png = 2), # index 2 is the pixmap
+					],
+				 "fonts": [gFont("Regular", 20)],
+				 "itemHeight": 52
+				}
+			</convert>
+		</widget>
+		-->
+		<widget name="config" position="280,330" size="880,270" zPosition="2" itemHeight="30" scrollbarMode="showNever" transparent="1" />
+	</screen>
+	
+	<screen name="ImageWizard" position="center,70" size="1200,620" title="Welcome...">
+		<ePixmap pixmap="buttons/red.png" position="270,15" size="200,40" alphatest="blend" />
+		<widget name="languagetext" position="270,15" size="200,40" zPosition="1" font="Regular;22" halign="center" valign="center" transparent="1" />
+		<widget name="wizard" position="0,0" size="240,620" />
+		<widget name="rc" position="40,60" size="160,500" zPosition="1" pixmaps="skin_default/rc0.png,skin_default/rc1.png,skin_default/rc2.png" alphatest="blend" />
+		<widget name="arrowdown" position="-100,-100" size="37,70" pixmap="skin_default/arrowdown.png" zPosition="2" alphatest="blend" />
+		<widget name="arrowdown2" position="-100,-100" size="37,70" pixmap="skin_default/arrowdown.png" zPosition="2" alphatest="blend" />
+		<widget name="arrowup" position="-100,-100" size="37,70" pixmap="skin_default/arrowup.png" zPosition="2" alphatest="blend" />
+		<widget name="arrowup2" position="-100,-100" size="37,70" pixmap="skin_default/arrowup.png" zPosition="2" alphatest="blend" />
+		<widget name="text" position="280,70" size="880,240" font="Regular;23" backgroundColor="background" transparent="1" />
+		<widget source="list" render="Listbox" position="280,330" size="880,270" zPosition="1" scrollbarMode="showNever" transparent="1">
+			<convert type="TemplatedMultiContent">{"template": [ MultiContentEntryText(pos = (10, 4), size = (580, 22), flags = RT_HALIGN_LEFT, text = 0) ],
+				"fonts": [gFont("Regular", 20)],
+				"itemHeight": 30
+				}</convert>
+		</widget>
+		<widget name="config" position="280,330" size="880,270" zPosition="2" itemHeight="30" scrollbarMode="showNever" transparent="1" />
+	</screen>
+	
+	<!-- new Default wizards -->
+	<screen name="DefaultWizard" position="center,70" size="1200,620" title="Welcome...">
+		<ePixmap pixmap="buttons/red.png" position="270,15" size="200,40" alphatest="blend" />
+		<widget name="languagetext" position="270,15" size="200,40" zPosition="1" font="Regular;22" halign="center" valign="center" transparent="1" />
+		<widget name="wizard" position="0,0" size="240,620" />
+		<widget name="rc" position="0,0" size="0,0" />
+		<widget name="arrowdown" position="-100,-100" size="37,70" pixmap="skin_default/arrowdown.png" zPosition="2" alphatest="blend" />
+		<widget name="arrowup" position="-100,-100" size="37,70" pixmap="skin_default/arrowup.png" zPosition="2" alphatest="blend" />
+		<widget name="arrowup2" position="-100,-100" size="37,70" pixmap="skin_default/arrowup.png" zPosition="2" alphatest="blend" />
+		<widget name="text" position="280,70" size="880,240" font="Regular;23" backgroundColor="background" transparent="1" />
+		<widget source="list" render="Listbox" position="280,330" size="880,270" zPosition="1" scrollbarMode="showNever" transparent="1">
+			<convert type="TemplatedMultiContent">{"template": [ MultiContentEntryText(pos = (10, 4), size = (580, 22), flags = RT_HALIGN_LEFT, text = 0) ],
+				"fonts": [gFont("Regular", 20)],
+				"itemHeight": 30
+				}</convert>
+		</widget>
+		<widget name="config" position="280,330" size="880,270" zPosition="2" itemHeight="30" scrollbarMode="showNever" transparent="1" />
+	</screen>
+	
+	<screen name="NetworkWizard" position="center,70" size="1200,620" title="NetworkWizard">
+		<ePixmap pixmap="buttons/red.png" position="270,15" size="200,40" alphatest="blend" />
+		<widget name="languagetext" position="270,15" size="200,40" zPosition="1" font="Regular;22" halign="center" valign="center" transparent="1" />
+		<widget name="wizard" position="0,0" size="240,620" />
+		<widget name="rc" position="40,60" size="160,500" zPosition="1" pixmaps="skin_default/rc0.png,skin_default/rc1.png,skin_default/rc2.png" alphatest="blend" />
+		<widget name="arrowdown" position="-100,-100" size="37,70" pixmap="skin_default/arrowdown.png" zPosition="2" alphatest="blend" />
+		<widget name="arrowdown2" position="-100,-100" size="37,70" pixmap="skin_default/arrowdown.png" zPosition="2" alphatest="blend" />
+		<widget name="arrowup" position="-100,-100" size="37,70" pixmap="skin_default/arrowup.png" zPosition="2" alphatest="blend" />
+		<widget name="arrowup2" position="-100,-100" size="37,70" pixmap="skin_default/arrowup.png" zPosition="2" alphatest="blend" />
+		<widget name="text" position="280,70" size="880,350" font="Regular;23" backgroundColor="background" transparent="1" />
+		<widget source="list" render="Listbox" position="280,350" size="880,270" zPosition="1" scrollbarMode="showNever" transparent="1">
+			<convert type="TemplatedMultiContent">{"template": [ MultiContentEntryText(pos = (10, 4), size = (580, 22), flags = RT_HALIGN_LEFT, text = 0) ],
+				"fonts": [gFont("Regular", 20)],
+				"itemHeight": 30
+				}</convert>
+		</widget>
+		<widget name="config" position="280,350" size="880,270" zPosition="2" itemHeight="30" scrollbarMode="showNever" transparent="1" />
+		<widget source="VKeyIcon" render="Pixmap" position="1110,20" size="70,30" zPosition="1" pixmap="icons/text.png" alphatest="blend">
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<widget name="HelpWindow" position="center,800" zPosition="1" size="1,1" />
+	</screen>
+	
+	<screen name="DefaultSatLists" position="center,120" size="620,520" title="Default services lists">
+		<ePixmap pixmap="buttons/red.png" position="10,5" size="200,40" alphatest="blend" />
+		<widget name="languagetext" position="10,5" size="200,40" zPosition="1" font="Regular;22" halign="center" valign="center" transparent="1" />
+		<eLabel position="10,50" size="600,1" backgroundColor="grey" />
+		<widget name="text" position="10,60" size="600,230" font="Regular;23" />
+		<widget source="list" render="Listbox" position="10,300" size="600,210" itemHeight="30" scrollbarMode="showNever">
+			<convert type="StringList" />
+		</widget>
+		<widget name="config" position="10,300" size="600,210" itemHeight="30" scrollbarMode="showNever" transparent="1" />
+		<widget name="rc" position="0,0" size="0,0" />
+		<widget name="arrowdown" position="0,0" size="0,0" />
+		<widget name="arrowup" position="0,0" size="0,0" />
+		<widget name="arrowup2" position="0,0" size="0,0" />
+		<widget name="wizard" position="0,0" size="0,0" />
+	</screen>
+	
+	<screen name="CleanUpWizardScreen" position="center,111" size="1400,880" title="Clean Up Wizard">
+		<ePixmap pixmap="buttons/red.png" position="188,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="buttons/green.png" position="488,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="buttons/yellow.png" position="788,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="buttons/blue.png" position="1088,833" size="300,40" alphatest="blend" />
+		<widget name="ButtonRedText" position="188,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget name="FoundConfigDescr" position="11,0" size="1000,35" halign="left" font="Regular;30" />
+		<widget name="FoundConfig" position="1050,0" size="300,35" halign="left" font="Regular;30" />
+		<widget name="LeftBehindDescr" position="11,40" size="1000,35" halign="left" font="Regular;30" />
+		<widget name="LeftBehind" position="1050,40" size="300,35" halign="left" font="Regular;30" />
+		<eLabel position="11,80" size="1379,1" backgroundColor="background" />
+		<widget name="menulist" position="11,100" enableWrapAround="1" size="1379,720" />
+	</screen>
+	
+	<!-- CleanupWizardConfiguration -->
+	<screen name="CleanupWizardConfiguration" position="center,111" size="1400,880" title="CleanupWizard settings">
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/red.png" position="188,833" size="300,40" alphatest="blend" scale="1" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/green.png" position="488,833" size="300,40" alphatest="blend" scale="1"/>
+		<widget source="key_red" render="Label" position="188,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget source="key_green" render="Label" position="488,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget name="config" position="11,0" size="1379,760" itemHeight="40" scrollbarMode="showNever" textOffset="20,0" font="Regular;30" secondfont="Regular;27" />
+		<widget source="status" render="Label" position="11,780" size="1379,40" font="Regular;26" halign="center" transparent="1" />
+	</screen>
+	
+	<screen name="VideoWizard" position="center,70" size="1200,620" title="Welcome...">
+		<ePixmap pixmap="buttons/red.png" position="270,15" size="200,40" alphatest="blend" />
+		<widget name="languagetext" position="270,15" size="200,40" zPosition="1" font="Regular;22" halign="center" valign="center" transparent="1" />
+		<widget name="wizard" position="0,0" size="240,620" />
+		<widget name="rc" position="40,60" size="160,500" zPosition="1" pixmaps="skin_default/rc0.png,skin_default/rc1.png,skin_default/rc2.png" alphatest="blend" />
+		<widget name="arrowdown" position="-100,-100" size="37,70" pixmap="skin_default/arrowdown.png" zPosition="2" alphatest="blend" />
+		<widget name="arrowdown2" position="-100,-100" size="37,70" pixmap="skin_default/arrowdown.png" zPosition="2" alphatest="blend" />
+		<widget name="arrowup" position="-100,-100" size="37,70" pixmap="skin_default/arrowup.png" zPosition="2" alphatest="blend" />
+		<widget name="arrowup2" position="-100,-100" size="37,70" pixmap="skin_default/arrowup.png" zPosition="2" alphatest="blend" />
+		<widget name="text" position="280,70" size="600,240" font="Regular;23" />
+		<widget name="portpic" position="280,330" size="150,150" zPosition="10" alphatest="on" />
+		<widget source="list" render="Listbox" position="440,330" size="720,210" zPosition="1" scrollbarMode="showNever" transparent="1">
+			<convert type="TemplatedMultiContent">{"template": [ MultiContentEntryText(pos = (10, 5), size = (430, 22), flags = RT_HALIGN_LEFT, text = 0) ],
+				"fonts": [gFont("Regular", 20)],
+				"itemHeight": 30
+				}</convert>
+		</widget>
+		<widget name="config" position="280,330" size="880,210" zPosition="2" itemHeight="30" scrollbarMode="showNever" transparent="1" />
+	</screen>
+	
+	<screen name="LanguageWizard" position="center,70" size="1200,620" title="Welcome...">
+		<widget name="wizard" position="0,0" size="240,620" />
+		<widget name="rc" position="40,60" size="160,500" zPosition="1" pixmaps="skin_default/rc0.png,skin_default/rc1.png,skin_default/rc2.png" alphatest="blend" />
+		<widget name="arrowdown" position="-100,-100" size="37,70" pixmap="skin_default/arrowdown.png" zPosition="2" alphatest="blend" />
+		<widget name="arrowdown2" position="-100,-100" size="37,70" pixmap="skin_default/arrowdown.png" zPosition="2" alphatest="blend" />
+		<widget name="arrowup" position="-100,-100" size="37,70" pixmap="skin_default/arrowup.png" zPosition="2" alphatest="blend" />
+		<widget name="arrowup2" position="-100,-100" size="37,70" pixmap="skin_default/arrowup.png" zPosition="2" alphatest="blend" />
+		<widget name="text" position="280,20" size="880,240" font="Regular;23" />
+		<widget source="languages" render="Listbox" position="280,330" size="880,260" scrollbarMode="showNever">
+			<convert type="TemplatedMultiContent">{"template": [
+						MultiContentEntryText(pos = (90, 11), size = (760, 50), flags = RT_HALIGN_LEFT, text = 1), # index 1 is the language name,
+						MultiContentEntryPixmap(pos = (10, 6), size = (60, 40), png = 2), # index 2 is the pixmap
+					],
+				 "fonts": [gFont("Regular", 20)],
+				 "itemHeight": 52
+				}</convert>
+		</widget>
+	</screen>
+</skin>

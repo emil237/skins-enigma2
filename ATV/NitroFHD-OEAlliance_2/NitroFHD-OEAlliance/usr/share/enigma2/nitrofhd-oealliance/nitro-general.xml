@@ -1,0 +1,501 @@
+
+<skin>
+	<!-- /lib/python/Screens/About.py -->
+	<!-- new About screen -->
+	<screen name="AboutOE" position="center,111" size="1400,880" title="About">
+		<widget source="lab1" render="Label" position="11,20" size="1260,70" font="Bold;48" foregroundColor="green2" backgroundColor="background" valign="center" halign="left" transparent="1" zPosition="1" />
+		<widget source="lab2" render="Label" position="11,90" size="1260,70" font="Bold;48" foregroundColor="green2" backgroundColor="background" valign="center" halign="left" transparent="1" zPosition="1" />
+		<widget source="lab3" render="Label" position="11,160" size="1260,70" font="Bold;48" foregroundColor="green2" backgroundColor="background" valign="center" halign="left" transparent="1" zPosition="1" />
+		<widget name="AboutScrollLabel" position="31,230" size="1260,560" font="Regular;34" transparent="1" backgroundColor="background" />
+		<ePixmap pixmap="nitrofhd-oealliance/images/dOS_logo_150.png" position="1200,670" size="150,150" alphatest="blend" />
+	</screen>
+	
+	<!-- legacy -->
+	<screen name="About" title="Image Information" position="0,0" size="1920,1080" flags="wfNoBorder" backgroundColor="mid">
+		<panel name="AboutOE" />
+	</screen>
+	
+	<!-- missing SoftwareUpdateChanges -->
+	
+	<!-- Translator Info -->
+	<screen name="TranslationInfo" position="center,145" size="600,470" title="Translation">
+		<eLabel position="10,20" size="580,23" font="Regular;23" text="Translation:" />
+		<widget source="TranslatorName" render="Label" position="10,60" size="580,25" font="Regular;20" />
+		<widget source="TranslationInfo" render="Label" position="10,100" size="580,50" font="Regular;20" />
+	</screen>
+	
+	<!-- missing openvix - CommitInfo -->
+	<!-- missing Devices -->
+	<!-- missing SystemMemoryInfo -->
+	<!-- missing SystemNetworkInfo -->
+	
+	<!-- new Audio selection -->
+	<screen name="AudioSelection" position="center,111" size="1400,880" title="Audio">
+		<widget pixmap="nitrofhd-oealliance/skin_default/buttons/key_red.png" position="11,5"  scale="1" render="Pixmap" size="100,40" source="key_red">
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<widget pixmap="nitrofhd-oealliance/skin_default/buttons/key_green.png" position="11,45" scale="1" render="Pixmap" size="100,40" source="key_green">
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<widget pixmap="nitrofhd-oealliance/skin_default/buttons/key_yellow.png" position="11,85" scale="1" render="Pixmap" size="100,40" source="key_yellow">
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<widget pixmap="nitrofhd-oealliance/skin_default/buttons/key_blue.png" position="11,125" scale="1" render="Pixmap" size="100,40" source="key_blue">
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<widget pixmap="nitrofhd-oealliance/skin_default/buttons/key_menu.png" position="11,165" scale="1" render="Pixmap" size="100,40" source="key_menu">
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<widget name="config" position="160,5" scrollbarMode="showOnDemand" size="1240,225" textOffset="20,0" font="Regular;30" secondfont="Regular;27" itemHeight="40" />
+		<eLabel backgroundColor="grey" position="11,240" size="1379,1" />
+		<widget enableWrapAround="1" position="11,260" render="Listbox" scrollbarMode="showOnDemand" size="1379,450" source="streams">
+			<convert type="TemplatedMultiContent">{"templates":
+					{"default": (45,[
+						MultiContentEntryText(pos=(55,0),size=(35,45),font=0,flags=RT_HALIGN_CENTER|RT_VALIGN_CENTER,text=1),# pid,
+						MultiContentEntryText(pos=(95,0),size=(340,45),font=0,flags=RT_HALIGN_LEFT|RT_VALIGN_CENTER,text=2),# language,
+						MultiContentEntryText(pos=(445,0),size=(240,45),font=1,flags=RT_HALIGN_LEFT|RT_VALIGN_CENTER,text=3),# codec,
+						MultiContentEntryText(pos=(695,0),size=(490,45),font=1,flags=RT_HALIGN_LEFT|RT_VALIGN_CENTER,text=4),# description,
+						MultiContentEntryPixmapAlphaTest(pos=(4,2),size=(40,40),png=5),# selection
+					],True,"showNever"),
+					"notselected": (45,[
+						MultiContentEntryText(pos=(55,0),size=(35,45),font=0,flags=RT_HALIGN_CENTER|RT_VALIGN_CENTER,text=1),# pid,
+						MultiContentEntryText(pos=(95,0),size=(340,45),font=0,flags=RT_HALIGN_LEFT|RT_VALIGN_CENTER,text=2),# language,
+						MultiContentEntryText(pos=(445,0),size=(240,45),font=1,flags=RT_HALIGN_LEFT|RT_VALIGN_CENTER,text=3),# codec,
+						MultiContentEntryText(pos=(695,0),size=(490,45),font=1,flags=RT_HALIGN_LEFT|RT_VALIGN_CENTER,text=4),# description,
+						MultiContentEntryPixmapAlphaTest(pos=(4,2),size=(40,40),png=5),# selection
+					],False,"showNever"),
+					"subs": (45,[
+						MultiContentEntryText(pos=(55,0),size=(35,45),font=0,flags=RT_HALIGN_CENTER|RT_VALIGN_CENTER,text=1),# pid,
+						MultiContentEntryText(pos=(95,0),size=(340,45),font=0,flags=RT_HALIGN_LEFT|RT_VALIGN_CENTER,text=2),# language,
+						MultiContentEntryText(pos=(445,0),size=(240,45),font=1,flags=RT_HALIGN_LEFT|RT_VALIGN_CENTER,text=3),# codec,
+						MultiContentEntryText(pos=(695,0),size=(490,45),font=1,flags=RT_HALIGN_LEFT|RT_VALIGN_CENTER,text=4),# description,
+						MultiContentEntryPixmapAlphaTest(pos=(4,2),size=(40,40),png=5),# selection
+					],True,"showNever"),
+					"subs_notselected": (45,[
+						MultiContentEntryText(pos=(55,0),size=(35,45),font=0,flags=RT_HALIGN_CENTER|RT_VALIGN_CENTER,text=1),# pid,
+						MultiContentEntryText(pos=(95,0),size=(340,45),font=0,flags=RT_HALIGN_LEFT|RT_VALIGN_CENTER,text=2),# language,
+						MultiContentEntryText(pos=(445,0),size=(240,45),font=1,flags=RT_HALIGN_LEFT|RT_VALIGN_CENTER,text=3),# codec,
+						MultiContentEntryText(pos=(695,0),size=(490,45),font=1,flags=RT_HALIGN_LEFT|RT_VALIGN_CENTER,text=4),# description,
+						MultiContentEntryPixmapAlphaTest(pos=(4,2),size=(40,40),png=5),# selection
+					],False,"showNever")
+					},
+				"fonts": [gFont("Regular",28),gFont("Regular",26)],
+				"itemHeight": 45}</convert>
+		</widget>
+		<eLabel backgroundColor="grey" position="11,730" size="1379,1" />
+		<widget font="Regular;32" halign="center" name="help_label" position="11,735" size="1379,75" valign="center" />
+	</screen>
+	
+	<!-- missing QuickSubtitlesConfigMenu -->
+	<!-- missing ButtonSetup -->
+	<!-- missing ButtonSetupSelect -->
+	
+	<!-- ChoiceBox -->
+	<screen name="ChoiceBoxPlus" position="center,111" size="900,880" title="Input">
+		<eLabel position="0,830" size="900,50" backgroundColor="background" zPosition="-1" />
+		<widget name="text" position="11,730" size="850,100" backgroundColor="background" foregroundColor="foreground" font="Regular; 30" transparent="1" />
+		<widget name="list" position="11,0" size="850,700" itemHeight="40" scrollbarMode="showNever" transparent="1" />
+	</screen>
+	
+	<screen name="ChoiceBox" position="center,111" size="820,820" title="Input">
+		<widget name="text" position="10,10" size="750,30" font="Regular;30" />
+		<widget name="list" position="0,30" size="750,600" itemHeight="40" enableWrapAround="1" scrollbarMode="showOnDemand" />
+		<applet type="onLayoutFinish">
+# this should be factored out into some helper code,but currently demonstrates applets.
+from enigma import eSize,ePoint
+
+orgwidth=self.instance.size().width()
+orgpos=self.instance.position()
+textsize=self["text"].getSize()
+
+# y size still must be fixed in font stuff...
+textsize=(textsize[0] + 80,textsize[1] + 80)
+count=len(self.list)
+if count &gt; 10:
+	count=14
+offset=40 * count
+wsizex=textsize[0] + 80
+wsizey=textsize[1] + offset + 20
+
+if (820 &gt; wsizex):
+	wsizex=820
+wsize=(wsizex,wsizey)
+
+# resize
+self.instance.resize(eSize(*wsize))
+
+# resize label
+self["text"].instance.resize(eSize(*textsize))
+
+# move list
+listsize=(wsizex - 20,40 * count)
+self["list"].instance.move(ePoint(10,textsize[1]))
+self["list"].instance.resize(eSize(*listsize))
+
+# center window
+newwidth=wsize[0]
+self.instance.move(ePoint((1920-wsizex)/2,(1080-wsizey)/2))
+		</applet>
+	</screen>
+	
+	<!-- Common interface -->
+	<screen name="MMIDialog" position="center,111" size="1400,880" title="Common interface">
+		<widget name="title" position="11,0" size="1379,40" font="Regular;32" />
+		<widget name="subtitle" position="11,50" size="1379,40" font="Regular;28" />
+		<widget name="entries" position="11,100" size="1379,400" itemHeight="40" scrollbarMode="showNever" />
+		<widget name="bottom" position="11,730" size="1379,70" halign="center" font="Regular;28" />
+	</screen>
+	
+	<!-- Common interface - selection -->
+	<screen name="CiSelection" position="center,111" size="1400,880" title="Common interface">
+		<widget name="text" position="11,750" size="1379,60" font="Regular;28" transparent="1" />
+		<widget name="entries" position="11,0" size="1379,720" itemHeight="40" scrollbarMode="showNever" />
+	</screen>
+	
+	<!-- Console -->
+	<screen name="Console" position="center,111" size="1400,880" title="Command execution...">
+		<widget name="text" position="11,0" size="1379,800" font="Console;25" transparent="1" backgroundColor="background" />
+	</screen>
+	
+	<!-- Harddisk setup -->
+	<screen name="HarddiskSetup" position="center,111" size="1400,880" title="Harddisk">
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/red.png" position="188,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/green.png" position="488,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/yellow.png" position="788,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/blue.png" position="1088,833" size="300,40" alphatest="blend" />
+		<widget source="key_red" render="Label" position="188,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget source="key_green" render="Label" position="488,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget source="key_yellow" render="Label" position="788,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget source="key_blue" render="Label" position="1088,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget source="icon" render="Pixmap" position="11,0" size="88,126" alphatest="blend">
+			<convert type="ValueToPixmap">Path</convert>
+		</widget>
+		<widget source="model" render="Label" position="175,0" size="650,25" font="Regular;23" />
+		<widget source="capacity" render="Label" position="175,40" size="650,25" font="Regular;23" />
+		<widget source="bus" render="Label" position="175,80" size="650,25" font="Regular;23" />
+		<eLabel position="11,140" size="800,1" backgroundColor="grey" />
+		<widget name="config" position="11,150" size="1379,60" itemHeight="30" scrollbarMode="showNever" textOffset="20,0" font="Regular;30" secondfont="Regular;27" />
+		<widget name="HelpWindow" position="center,700" zPosition="1" size="1,1" />
+		<eLabel position="11,355" size="800,1" backgroundColor="grey" />
+		<widget source="introduction" render="Label" position="11,365" size="1379,50" font="Regular;21" halign="center" valign="center" transparent="1" />
+	</screen>
+	
+	<!-- Harddrive selection -->
+	<screen name="HarddiskSelection" position="center,111" size="1400,880" title="Select HDD">
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/red.png" position="188,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/green.png" position="488,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/yellow.png" position="788,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/blue.png" position="1088,833" size="300,40" alphatest="blend" />
+		<widget source="key_red" render="Label" position="188,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget source="key_green" render="Label" position="488,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget source="key_yellow" render="Label" position="788,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget source="key_blue" render="Label" position="1088,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget source="hddlist" render="Listbox" position="11,0" size="1379,720" scrollbarMode="showNever">
+			<convert type="TemplatedMultiContent">{"template": [
+						MultiContentEntryText(pos = (120, 4), size = (1040, 37), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_TOP, text = 0), # index 0 is the hdd_description
+						MultiContentEntryText(pos = (140, 42), size = (1020, 30), font=1, flags = RT_HALIGN_LEFT|RT_VALIGN_BOTTOM, text = 2), # index 2 is the device info
+						MultiContentEntryPixmapAlphaTest(pos = (10, 6), size = (65, 65), png = 7), # index 3 is the device pixmap
+						MultiContentEntryPixmapAlphaTest(pos = (78, 51), size = (15, 16), png = 8), # index 4 is the online state pixmap
+		],
+				"fonts": [gFont("Regular", 30),gFont("Regular", 25)],
+				"itemHeight": 80
+				}</convert>
+		</widget>
+		<widget source="introduction" render="Label" position="11,740" size="1260,50" font="Regular;24" halign="center" valign="center" transparent="1" />
+		<widget source="info" render="Pixmap" pixmap="nitrofhd-oealliance/icons/key_info.png" position="11,1030" zPosition="9" size="70,30" transparent="1" alphatest="blend">
+			<convert type="ConditionalShowHide" />
+		</widget>
+	</screen>
+	
+	<!-- missing BufferIndicator -->
+	
+	<!-- Numberzap -->
+	<screen name="NumberZap" position="1328,875" size="554,160" title="Channel">
+		<!-- <widget name="channel" position="11,162" size="522,58" font="Regular;23" /> -->
+		<widget name="number" position="84,15" size="369,134" halign="center" font="Regular;93" foregroundColor="green2" />
+	</screen>
+	
+	<!-- missing NumberZapPicon -->
+	
+	<!-- Inputbox -->
+	<screen name="InputBox" position="center,center" size="840,220" title="Input">
+		<widget name="text" position="10,20" size="810,100" font="Regular;32" />
+		<widget name="input" position="10,140" size="810,40" font="Regular;30" />
+	</screen>
+	
+	<!-- Input Device -->
+	<screen name="InputDeviceSelection" position="center,111" size="1400,880" title="Select input device">
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/red.png" position="188,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/green.png" position="488,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/yellow.png" position="788,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/blue.png" position="1088,833" size="300,40" alphatest="blend" />
+		<widget source="key_red" render="Label" position="188,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget source="key_green" render="Label" position="488,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget source="key_yellow" render="Label" position="788,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget source="key_blue" render="Label" position="1088,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget source="list" render="Listbox" position="11,0" size="1379,720" scrollbarMode="showNever" zPosition="1">
+			<convert type="TemplatedMultiContent">{"template": [
+					MultiContentEntryPixmapAlphaTest(pos = (10, 6), size = (64, 64), png = 2), # index 3 is the interface pixmap
+					MultiContentEntryText(pos = (100, 6), size = (1245, 68), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER|RT_WRAP, text = 1), # index 1 is the interfacename
+				],
+				"fonts": [gFont("Regular", 30),gFont("Regular", 24)],
+				"itemHeight": 80
+				}</convert>
+		</widget>
+		<widget source="introduction" render="Label" position="11,760" size="1379,40" font="Regular;24" halign="center" transparent="0" />
+	</screen>
+	
+	<screen name="InputDeviceSetup" position="center,111" size="1400,880" title="Input device setup">
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/red.png" position="188,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/green.png" position="488,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/yellow.png" position="788,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/blue.png" position="1088,833" size="300,40" alphatest="blend" />
+		<widget source="key_red" render="Label" position="188,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget source="key_green" render="Label" position="488,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget source="key_yellow" render="Label" position="788,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget source="key_blue" render="Label" position="1088,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget name="config" position="11,0" size="1260,720" itemHeight="40" scrollbarMode="showNever" textOffset="20,0" font="Regular;30" secondfont="Regular;27" />
+		<widget source="introduction" render="Label" position="11,760" size="1260,40" font="Regular;24" halign="center" transparent="1" />
+	</screen>
+	
+	<!-- IPKG -->
+	<screen name="Ipkg" position="center,center" size="810,250" title="Installing Software...">
+		<widget name="activityslider" position="35,35" size="700,10" borderWidth="2" borderColor="green2" />
+		<widget name="package" position="15,65" size="750,40" font="Regular;30" />
+		<widget name="status" position="15,120" size="750,65" font="Regular;30" />
+		<widget name="slider" position="35,205" size="700,12" borderWidth="2" borderColor="green2" />
+	</screen>
+	
+	<!-- missing LanguageSelection -->
+	
+	<!-- Location Box -->
+	<screen name="LocationBox" position="center,111" size="1400,880" title="Select Location">
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/red.png" position="188,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/green.png" position="488,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/yellow.png" position="788,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/blue.png" position="1088,833" size="300,40" alphatest="blend" />
+		<widget name="key_red" position="188,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget name="key_green" position="488,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget name="key_yellow" position="788,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget name="key_blue" position="1088,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget name="text" position="11,0" size="1379,35" font="Regular;30" />
+		<widget name="target" position="11,40" size="1379,35" font="Regular;26" />
+		<eLabel position="11,78" size="1379,1" backgroundColor="background" />
+		<widget name="filelist" position="65,85" size="1335,400" itemHeight="40" scrollbarMode="showNever" selectionDisabled="1" />
+		<eLabel position="11,510" size="1379,1" backgroundColor="background" />
+		<widget name="textbook" position="11,515" size="1379,35" font="Regular;30" />
+		<eLabel position="11,550" size="1379,1" backgroundColor="background" />
+		<widget name="booklist" position="65,555" size="1335,270" itemHeight="30" scrollbarMode="showNever" />
+	</screen>
+	
+	<!-- missing LogManager -->
+	<!-- missing LogManagerViewLog -->
+
+	<!-- Messagebox -->
+	<screen name="MessageBox" position="center,111" size="1400,880" title="Message">
+		<widget name="ErrorPixmap" pixmap="skin_default/icons/input_error.png" position="11,20" size="80,80" alphatest="blend" scale="1" />
+		<widget name="QuestionPixmap" pixmap="skin_default/icons/input_question.png" position="11,20" size="80,80" alphatest="blend" scale="1" />
+		<widget name="InfoPixmap" pixmap="skin_default/icons/input_info.png" position="11,20" size="80,80" alphatest="blend" scale="1" />
+		<widget name="list" position="160,420" size="1240,400" />
+		<widget name="text" position="160,20" size="1240,400" font="Regular;30" valign="center" />
+		<applet type="onLayoutFinish" />
+	</screen>
+	
+	<screen name="MessageBoxSimple" position="center,center" size="1002,15" title="Message" backgroundColor="messageboxbg">
+		<panel name="MessageBox" />
+	</screen>
+	
+	<!-- Minute input -->
+	<screen name="MinuteInput" position="1494,902" size="384,128" title="Seek">
+		<widget name="minutes" position="58,19" size="262,83" halign="right" font="Regular; 30" />
+	</screen>
+	
+	<!-- missing Multiboot -->
+	<!-- missing Multiboot Image Selector -->
+	
+	<!-- Mute -->
+	<screen name="Mute" position="11,50" size="200,200" zPosition="10" title="Mute" backgroundColor="transparent" flags="wfNoBorder">
+		<ePixmap position="3,3" size="195,195" pixmap="nitrofhd-oealliance/mute.png" alphatest="blend" />
+	</screen>
+	
+	<!-- Numerical help dialog -->
+	<screen name="NumericalTextInputHelpDialog" position="center,900" zPosition="2" size="607,128" backgroundColor="grey" flags="wfNoBorder">
+		<eLabel position="2,2" size="605,126" backgroundColor="#404040" zPosition="-1" />
+		<widget name="key1" position="2,2" size="200,30" font="Regular;22" halign="center" valign="center" />
+		<widget name="key2" position="203,2" size="200,30" font="Regular;22" halign="center" valign="center" />
+		<widget name="key3" position="404,2" size="200,30" font="Regular;22" halign="center" valign="center" />
+		<widget name="key4" position="2,33" size="200,30" font="Regular;22" halign="center" valign="center" />
+		<widget name="key5" position="203,33" size="200,30" font="Regular;22" halign="center" valign="center" />
+		<widget name="key6" position="404,33" size="200,30" font="Regular;22" halign="center" valign="center" />
+		<widget name="key7" position="2,64" size="200,30" font="Regular;22" halign="center" valign="center" />
+		<widget name="key8" position="203,64" size="200,30" font="Regular;22" halign="center" valign="center" />
+		<widget name="key9" position="404,64" size="200,30" font="Regular;22" halign="center" valign="center" />
+		<widget name="help1" position="2,95" size="200,30" font="Regular;22" halign="center" valign="center" />
+		<widget name="key0" position="203,95" size="200,30" font="Regular;17" halign="center" valign="center" />
+		<widget name="help2" position="404,95" size="200,30" font="Regular;22" halign="center" valign="center" />
+	</screen>
+	
+	<!-- New Timeshift state -->
+	<screen name="TimeshiftState" position="center,115" size="900,100" zPosition="2" backgroundColor="background" flags="wfNoBorder">
+		<widget name="state" position="20,3" size="120,40" font="Regular;34" halign="center" backgroundColor="background" />
+		<widget source="session.CurrentService" render="Label" position="150,5" size="160,40" font="Regular;34" halign="left" foregroundColor="white" backgroundColor="background">
+			<convert type="ServicePosition">Remaining</convert>
+		</widget>
+		<widget source="session.CurrentService" render="Label" position="610,5" size="120,40" font="Regular;34" halign="right" foregroundColor="white" backgroundColor="background">
+			<convert type="ServicePosition">Position</convert>
+		</widget>
+		<eLabel text="/" position="735,5" size="20,40" font="Regular;34" halign="center" foregroundColor="white" backgroundColor="background" />
+		<widget source="session.CurrentService" render="Label" position="760,5" size="120,40" font="Regular;34" halign="left" foregroundColor="white" backgroundColor="background">
+			<convert type="ServicePosition">Length</convert>
+		</widget>
+		<widget source="session.CurrentService" render="Progress" position="20,55" size="860,28" zPosition="2" borderWidth="2" borderColor="#bbbbbb" transparent="1">
+			<convert type="ServicePosition">Position</convert>
+		</widget>
+	</screen>
+	
+	<!-- Pin input -->
+	<screen name="PinInput" position="center,center" size="800,310" title="Pin code needed">
+		<widget name="service" position="20,20" size="760,40" font="Regular;34" valign="center" />
+		<widget name="text" position="20,80" size="760,80" font="Regular;32" halign="center" valign="center" />
+		<widget name="tries" position="20,180" size="760,40" font="Regular;32" halign="center" valign="center" />
+		<widget name="input" position="20,240" size="760,50" font="Regular;50" halign="center" valign="center" />
+	</screen>
+	
+	<!-- missing PinInputPopup -->
+	<!-- missing ParentalControlChangePin -->
+	
+	<!-- Picture in picture setup -->
+	<screen name="PiPSetup" position="center,center" size="1000,220" backgroundColor="background" flags="wfNoBorder" title="PiPSetup">
+		<widget name="text" position="20,20" size="960,180" font="Regular;34" halign="center" valign="center" />
+	</screen>
+	
+	<!-- Plugin browser -->
+	<screen name="PluginBrowser" position="center,111" size="1400,880" title="Plugin browser" backgroundColor="background">
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/red.png" position="180,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/green.png" position="480,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/yellow.png" position="780,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/blue.png" position="1080,833" size="300,40" alphatest="blend" />
+		<widget name="red" position="188,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" />
+		<widget name="green" position="488,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" />
+		<widget name="list" position="11,2" size="1379,800" scrollbarMode="showNever" itemHeight="80"/>
+		  
+
+	</screen>
+	
+	<!-- missing PluginDownloadBrowser -->
+	
+	<!-- Nim setup -->
+	<screen name="NimSetup" position="center,111" size="1400,880" title="Reception Settings">
+		<widget name="config" position="11,0" zPosition="2" size="1379,800" scrollbarMode="showNever" transparent="1" backgroundColor="background" textOffset="20,0" font="Regular;30" secondfont="Regular;27" itemHeight="40" />
+	</screen>
+	
+	<!-- Nim selection -->
+	<screen name="NimSelection" position="center,111" size="1400,880" title="Choose Tuner">
+		<widget source="nimlist" render="Listbox" position="11,0" size="1379,750" scrollbarMode="showNever" transparent="0" backgroundColor="background">
+			<convert type="TemplatedMultiContent">{"template": [
+						MultiContentEntryText(pos = (10, 2), size = (1290, 40), flags = RT_HALIGN_LEFT, text = 1), # index 1 is the nim name,
+						MultiContentEntryText(pos = (50, 47), size = (1250, 100), font = 1, flags = RT_HALIGN_LEFT | RT_WRAP, text = 2), # index 2 is a description of the nim settings,
+					],
+				 "fonts": [gFont("Regular", 32), gFont("Regular", 27)],
+				 "itemHeight": 150
+				}</convert>
+		</widget>
+	</screen>
+	
+	<!-- missing SelectSatsEntryScreen -->
+	
+	<!-- Scan setup -->
+	<screen name="ScanSetup" position="center,111" size="1400,880" title="Service scan">
+		<widget name="config" position="11,0" size="1379,720" enableWrapAround="1" scrollbarMode="showOnDemand" textOffset="20,0" font="Regular;30" secondfont="Regular;27" itemHeight="40" />
+		<widget name="introduction" position="11,760" size="1379,40" font="Regular;28" halign="center" />
+	</screen>
+	
+	<!-- Scan simple -->
+	<screen name="ScanSimple" position="center,111" size="1400,880" title="Service scan">
+		<widget name="header" position="11,0" size="1379,45" font="Regular;34" />
+		<widget name="config" position="11,50" size="1379,680" enableWrapAround="1" scrollbarMode="showOnDemand" textOffset="20,0" font="Regular;30" secondfont="Regular;27" itemHeight="40" />
+		<widget name="footer" position="11,760" size="1379,40" font="Regular;28" halign="center" />
+	</screen>
+	
+	<!-- Service scan -->
+	<screen name="ServiceScan" position="center,190" size="1170,725" title="Service Scan">
+		<widget source="FrontendInfo" render="Pixmap" pixmap="skin_default/icons/scan-s.png" position="40,20" size="94,94" alphatest="blend">
+			<convert type="FrontendInfo">TYPE</convert>
+			<convert type="ValueRange">0,0</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<widget source="FrontendInfo" render="Pixmap" pixmap="skin_default/icons/scan-c.png" position="40,20" size="94,94" alphatest="blend">
+			<convert type="FrontendInfo">TYPE</convert>
+			<convert type="ValueRange">1,1</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<widget source="FrontendInfo" render="Pixmap" pixmap="skin_default/icons/scan-t.png" position="40,20" size="94,94" alphatest="blend">
+			<convert type="FrontendInfo">TYPE</convert>
+			<convert type="ValueRange">2,2</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<widget name="network" position="250,30" size="840,35" font="Regular;32" />
+		<widget name="transponder" position="250,80" size="840,35" font="Regular;32" />
+		<widget name="scan_state" position="130,150" zPosition="2" size="910,33" font="Regular;30" />
+		<widget name="pass" position="130,150" size="910,33" font="Regular;30" />
+		<widget name="scan_progress" position="130,220" size="910,15" pixmap="skin_default/progress.png" borderWidth="3" borderColor="#cccccc" />
+		<widget name="servicelist" position="130,250" size="560,450" selectionDisabled="1" />
+	</screen>
+	
+	<!-- missing CableScanScreen -->
+	<!-- missing CableScanStatus -->
+	<!-- missing Screensaver -->
+	
+	<!-- Skin Selector -->
+	<screen name="SkinSelector" position="center,111" size="1400,880" title="Choose your Skin">
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/red.png" position="188,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/green.png" position="488,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/yellow.png" position="788,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/blue.png" position="1088,833" size="300,40" alphatest="blend" />
+		<widget source="key_red" render="Label" position="188,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget name="SkinList" position="11,0" size="500,440" itemHeight="40" scrollbarMode="showNever" />
+		<widget name="Preview" position="600,20" size="750,410" alphatest="blend" />
+		<widget source="introduction" render="Label" position="11,540" size="1379,200" font="Regular;30" halign="center" valign="center" />
+	</screen>
+	
+	<!-- Sleeptimer edit -->
+	<screen name="SleepTimerEdit" position="center,111" size="1400,880" title="Sleep Timer">
+		<panel name="Setup" />
+	</screen>
+	
+	<!-- new Reboot -->
+	<screen name="QuitMainloopScreen" position="0,0" size="0,0" flags="wfNoBorder" />
+	
+	<!-- Subtitle area -->
+	<screen name="SubtitleDisplay" position="0,0" size="1920,1080" zPosition="-1" backgroundColor="transparent" flags="wfNoBorder" />
+	
+	<!-- missing JobView -->
+	
+	<!-- new Time & date input -->
+	<screen name="TimeDateInput" position="center,250" size="1200,280" title="Time/Date Input">
+		<eLabel position="0,830" size="1200,50" backgroundColor="background" zPosition="-1" />
+		<ePixmap pixmap="buttons/red.png" scale="stretch" position="588,833" size="300,40" alphatest="on" />
+		<ePixmap pixmap="buttons/green.png" scale="stretch" position="888,833" size="300,40" alphatest="on" />
+		<widget name="canceltext" position="188,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget name="oktext" position="488,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget name="config" position="11,0" size="1150,300" itemHeight="50" textOffset="20,0" font="Regular;30" secondfont="Regular;27" />
+	</screen>
+	
+	<!-- unhandled key pressed -->
+	<screen name="unhandledKey" position="11,50" size="100,100" zPosition="100" title="UnhandledKey" backgroundColor="transparent" flags="wfNoBorder">
+		<widget name="unhandledKeyPixmap" pixmap="unhandled-key.png" position="5,5" size="90,90" alphatest="blend" />
+	</screen>
+	
+	<!-- missing modern VirtualKeyBoard -->
+	
+	<!-- ## new Volume # -->
+	<screen name="Volume" position="1380,30" size="500,50" title="Volume" flags="wfNoBorder" backgroundColor="transparent" zPosition="10">
+		<ePixmap pixmap="volumeBG.png" position="0,0" size="500,50" transparent="1" zPosition="2" />
+		<widget name="Volume" pixmap="progress400.png" backgroundColor="background" position="90,17" size="400,26" transparent="1" zPosition="3" />
+		<widget render="VolumeText" source="global.CurrentTime" font="Nitro_L;30" position="5,17" size="90,33" foregroundColor="Nitro3" backgroundColor="background" halign="center" valign="center" transparent="1" zPosition="100" />
+	</screen>
+	
+	<screen name="Subtitles" position="0,0" size="1920,1080" backgroundColor="transparent" flags="wfNoBorder" zPosition="-1">
+		<panel name="Setup-Default" />
+	</screen>
+</skin>

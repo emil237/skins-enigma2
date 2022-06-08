@@ -1,0 +1,139 @@
+
+<skin>
+	<!-- new Timer edit list -->
+	<screen name="TimerEditList" position="center,111" size="1400,880" title="Timer Editor">
+		<ePixmap pixmap="buttons/red.png" position="188,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="buttons/green.png" position="488,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="buttons/yellow.png" position="788,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="buttons/blue.png" position="1088,833" size="300,40" alphatest="blend" />
+		<widget name="key_red" position="188,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget name="key_green" position="488,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget name="key_yellow" position="788,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget name="key_blue" position="1088,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget name="timerlist" position="11,0" size="1379,770" scrollbarMode="showOnDemand" zPosition="1" enableWrapAround="1" />
+	</screen>
+	
+	<!-- new Timer entry -->
+	<screen name="TimerEntry" position="center,111" size="1400,880" title="Timer Entry">
+		<eLabel position="188,870" size="300,1" backgroundColor="red" />
+		<eLabel position="488,870" size="300,1" backgroundColor="green" />
+		<eLabel position="788,870" size="300,1" backgroundColor="yellow" />
+		<eLabel position="1088,870" size="300,1" backgroundColor="blue" />
+		<widget name="canceltext" position="188,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" />
+		<widget name="oktext" position="488,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" />
+		<widget name="config" position="10,10" size="1360,800" itemHeight="40" scrollbarMode="showNever" textOffset="20,0" font="Regular;30" secondfont="Regular;27" />
+	</screen>
+	
+	<!-- new Timer log -->
+	<screen name="TimerLog" position="center,111" size="1400,880" title="Timer Log">
+		<ePixmap pixmap="buttons/red.png" position="188,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="buttons/green.png" position="488,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="buttons/yellow.png" position="788,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="buttons/blue.png" position="1088,833" size="300,40" alphatest="blend" />
+		<widget name="key_red" position="188,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget name="key_green" position="488,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget name="key_yellow" position="788,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget name="key_blue" position="1088,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget name="loglist" position="11,0" size="1379,300" itemHeight="40" scrollbarMode="showNever" />
+		<eLabel position="11,301" size="1379,1" backgroundColor="background" />
+		<widget name="logentry" position="11,306" size="1379,480" font="Regular;28" />
+	</screen>
+	
+	<!-- new Timer sanity conflict -->
+	<screen name="TimerSanityConflict" position="center,111" size="1400,880" title="Timer sanity error">
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/red.png" position="188,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/green.png" position="488,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/yellow.png" position="788,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/blue.png" position="1088,833" size="300,40" alphatest="blend" />
+		<widget name="key_red" position="188,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget name="key_green" position="488,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget name="key_yellow" position="788,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget name="key_blue" position="1088,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget name="timer1" position="11,0" size="655,150" scrollbarMode="showNever" />
+		<eLabel position="729,0" size="1,170" backgroundColor="grey" />
+		<widget name="timer2" position="750,100" size="600,150" scrollbarMode="showNever" />
+		<eLabel position="11,170" size="1379,1" backgroundColor="grey" />
+		<widget name="list" position="11,180" size="1260,600" scrollbarMode="showNever" />
+	</screen>
+	
+	<!-- new Timer Selection -->
+	<screen name="TimerSelection" position="center,111" size="1400,880" title="Timer Selection">
+		<widget name="timerlist" position="11,0" size="1379,800" itemHeight="80" scrollbarMode="showOnDemand" zPosition="1" enableWrapAround="1" />
+	</screen>
+	
+	<!-- ## Autotimer ## -->
+	<screen name="AutoTimerOverview" position="center,111" size="1400,880" title="AutoTimer Overview">
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/red.png" position="188,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/green.png" position="488,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/yellow.png" position="788,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/blue.png" position="1088,833" size="300,40" alphatest="blend" />
+		<widget source="key_green" render="Label" position="488,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget source="key_yellow" render="Label" position="788,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget source="key_blue" render="Label" position="1088,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget name="entries" position="11,0" size="1379,800" itemHeight="40" scrollbarMode="showNever" />
+	</screen>
+	
+	<!-- missing AutoTimerImporter -->
+	
+	<screen name="AutoTimerEditor" position="center,111" size="1400,880" title="Edit AutoTimer">
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/red.png" position="188,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/green.png" position="488,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/yellow.png" position="788,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/blue.png" position="1088,833" size="300,40" alphatest="blend" />
+		<widget source="key_red" render="Label" position="188,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget source="key_green" render="Label" position="488,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget source="key_yellow" render="Label" position="788,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget source="key_blue" render="Label" position="1088,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget name="config" position="11,0" size="1379,720" itemHeight="40" scrollbarMode="showNever" textOffset="20,0" font="Regular;30" secondfont="Regular;27" />
+		<widget source="help" render="Label" position="11,740" size="1260,80" font="Regular;28" transparent="1" />
+	</screen>
+	
+	<screen name="AutoTimerFilterEditor" position="center,111" size="1400,880" title="Edit AutoTimer Filters">
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/red.png" position="188,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/green.png" position="488,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/yellow.png" position="788,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/blue.png" position="1088,833" size="300,40" alphatest="blend" />
+		<widget source="key_red" render="Label" position="188,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget source="key_green" render="Label" position="488,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget source="key_yellow" render="Label" position="788,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget source="key_blue" render="Label" position="1088,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget name="config" position="11,0" size="1379,800" itemHeight="40" scrollbarMode="showNever" textOffset="20,0" font="Regular;30" secondfont="Regular;27" />
+	</screen>
+	
+	<!-- missing AutoTimerServiceEditor -->
+	
+	<screen name="AutoTimerSettings" position="center,111" size="1400,880" title="AutoTimer Settings">
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/red.png" position="188,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/green.png" position="488,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/yellow.png" position="788,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/blue.png" position="1088,833" size="300,40" alphatest="blend" />
+		<widget source="key_red" render="Label" position="188,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget source="key_green" render="Label" position="488,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget name="config" position="11,0" size="1379,720" itemHeight="40" scrollbarMode="showNever" textOffset="20,0" font="Regular;30" secondfont="Regular;27" />
+		<widget source="help" render="Label" position="11,740" size="1379,80" font="Regular;28" />
+	</screen>
+	
+	<!-- missing AutoTimerFAQ -->
+	<!-- missing AutoTimerHelp -->
+	<!-- missing AutoTimerWizard" -->
+	
+	<screen name="AutoTimerPreview" position="center,111" size="1400,880" title="Preview AutoTimer">
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/red.png" position="188,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/green.png" position="488,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/yellow.png" position="788,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/blue.png" position="1088,833" size="300,40" alphatest="blend" />
+		<widget source="key_red" render="Label" position="188,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget source="key_green" render="Label" position="488,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget source="timerlist" render="Listbox" position="11,0" size="1379,800" scrollbarMode="showNever">
+			<convert type="TemplatedMultiContent">{"template": [
+			MultiContentEntryText(pos=(2,1), size=(1100,32), text = 3, font = 0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER),
+			MultiContentEntryText(pos=(2,34), size=(1100,30), text = 0, font = 1, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER),
+			MultiContentEntryText(pos=(2,65), size=(500,20), text = 4, font = 1, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER),
+			MultiContentEntryText(pos=(510,65), size=(700,20), text = 2, font = 1, flags = RT_HALIGN_RIGHT|RT_VALIGN_CENTER),
+		  ],
+		 "fonts": [gFont("Regular", 28),gFont("Regular", 25)],
+		 "itemHeight": 100
+		}</convert>
+		</widget>
+	</screen>
+</skin>

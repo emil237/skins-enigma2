@@ -1,0 +1,220 @@
+
+<skin>
+	<!-- new Bouquet selector -->
+	<screen name="BouquetSelector" position="center,250" size="900,650" title="Choose bouquet">
+		<eLabel position="0,600" size="900,50" backgroundColor="background" zPosition="-1" />
+		<widget name="menu" enableWrapAround="1"  position="11,5" scrollbarMode="showOnDemand"  size="850,585" font="Regular;30" itemHeight="45" transparent="1"/>
+	</screen>
+	
+	<!-- Channel context menu -->
+	<screen name="ChannelContextMenu" position="center,200" size="900,780" title="Channellist menu">
+		<eLabel position="0,730" size="900,50" backgroundColor="background" zPosition="-1" />
+		<widget name="menu" enableWrapAround="1" position="11,0" scrollbarMode="showOnDemand" size="850,730" />
+	</screen>
+	
+	<!-- Channel selection - TV -->
+	<screen name="ChannelSelection" position="0,0" size="1920,1080" title="Channel Selection" flags="wfNoBorder" backgroundColor="transparent">
+		<ePixmap pixmap="nitrofhd-oealliance/images/background.png" position="0,0" size="1920,1080" zPosition="-2" />
+		<ePixmap pixmap="nitrofhd-oealliance/images/b_bg2.png" position="130,70" size="700,400" alphatest="blend" />
+		<widget backgroundColor="#ff000000" position="175,95" render="Pig" size="600,340" source="session.VideoPicture" zPosition="10" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/red.png" scale="1" position="720,1023" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/green.png" scale="1" position="1020,1023" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/yellow.png" scale="1" position="1320,1023" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/blue.png" scale="1" position="1620,1023" size="300,40" alphatest="blend" />
+		<widget name="key_red" position="720,1023" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" />
+		<widget name="key_green" position="1020,1023" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" />
+		<widget name="key_yellow" position="1320,1023" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" />
+		<widget name="key_blue" position="1620,1023" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" />
+		<ePixmap pixmap="nitrofhd-oealliance/icons/info.png" position="50,1020" size="70,30" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/icons/menu.png" position="122,1020" size="70,30" alphatest="blend" />
+		<widget backgroundColor="background" font="Bold; 34" foregroundColor="Nitro2" noWrap="1" position="960,60" render="Label" size="930,40" source="Title" transparent="1">
+			<convert type="ChannelSelectionShortTitle" />
+		</widget>
+		<widget name="list" position="960,110" size="940,840" scrollbarMode="showNever" backgroundColor="background" transparent="1" serviceNumberFont="Regular;28" serviceNameFont="Regular;29" serviceInfoFont="Nitro_L;27" additionalInfoFont="Regular;26" colorServiceDescription="#EBEBEB" colorServiceDescriptionSelected="#aad924" foregroundColorServiceNotAvail="red" picServiceEventProgressbar="nitrofhd-oealliance/progcl.png" colorEventProgressbarBorder="grey2" colorEventProgressbarBorderSelected="selBarBorder" recordingColor="redB" foregroundColor="#D5D5D5" />
+		<widget source="Service" render="Picon" position="80,500" zPosition="5" size="120,70" alphatest="blend">
+			<convert type="ServiceName">Reference</convert>
+		</widget>
+		<widget source="ServiceEvent" render="Label" position="230,500" size="700,100" font="Bold;30" foregroundColor="Nitro2" backgroundColor="background" transparent="1" valign="top">
+			<convert type="EventName">Name</convert>
+		</widget>
+		<widget source="ServiceEvent" backgroundColor="background" font="Regular;25" foregroundColor="foreground" options="movetype=running,direction=top,startpoint=0,startdelay=8000,wrap=1,always=0,repeat=2,oneshot=1" position="80,600" render="RunningText" size="800,390" transparent="1" zPosition="1">
+			<convert type="EventName">ExtendedDescription</convert>
+		</widget>
+	</screen>
+	
+	<!-- epgselection > menu > import from EPG -->
+	<!-- Simple channelselection -->
+	<screen name="SimpleChannelSelection" position="center,111" size="1400,880" title="Channel Selection">
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/red.png" scale="1" position="188,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/green.png" scale="1" position="488,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/yellow.png" scale="1" position="788,833" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/blue.png" scale="1" position="1088,833" size="300,40" alphatest="blend" />
+		<widget name="key_red" position="188,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget name="key_green" position="488,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget name="key_yellow" position="788,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget name="key_blue" position="1088,833" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget name="list" position="11,00" size="1379,780" scrollbarMode="showNever" backgroundColor="background" transparent="1" serviceItemHeight="60" serviceInfoFont="Regular;28" colorServiceDescription="grey" colorServiceDescriptionSelected="foreground" foregroundColorServiceNotAvail="red" picServiceEventProgressbar="Default-HD/progcl.png" colorEventProgressbarBorder="grey" colorEventProgressbarBorderSelected="white" />
+	</screen>
+	
+	<!-- missing SlimChannelSelection -->
+	<!--  alternative channel list service mode - available via context menu -->
+	
+	<!-- new Channel selection - Radio -->
+	<screen name="ChannelSelectionRadio" position="center,100" size="1400,700" title="Channel Selection" flags="wfBorder" backgroundColor="background">
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/red.png" scale="1" position="188,653" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/green.png" scale="1" position="488,653" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/yellow.png" scale="1" position="788,653" size="300,40" alphatest="blend" />
+		<ePixmap pixmap="nitrofhd-oealliance/buttons/blue.png" scale="1" position="1088,653" size="300,40" alphatest="blend" />
+		<widget name="key_red" position="188,653" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget name="key_green" position="488,653" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget name="key_yellow" position="788,653" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget name="key_blue" position="1088,653" size="300,40" zPosition="1" font="Regular;24" halign="center" valign="center" transparent="1" backgroundColor="background" foregroundColor="foreground" />
+		<widget name="list" position="10,10" size="1380,560" scrollbarMode="showNever" backgroundColor="background" transparent="0" serviceItemHeight="44" serviceNumberFont="Regular;29" serviceNameFont="Regular;29" serviceInfoFont="Nitro_L;29" additionalInfoFont="Regular;27" colorServiceDescription="foreground" colorServiceDescriptionSelected="Nitro" foregroundColorServiceNotAvail="orange" picServiceEventProgressbar="nitrofhd-oealliance/progcl.png" colorEventProgressbarBorder="grey" colorEventProgressbarBorderSelected="grey" />
+	</screen>
+	
+	<!-- Radio infobar -->
+	<screen name="RadioInfoBar" position="0,730" size="1920,345" title="Radio" backgroundColor="transparent" flags="wfNoBorder">
+		<ePixmap pixmap="nitrofhd-oealliance/images/IbMov.png" position="0,155" size="1920,225" alphatest="blend" zPosition="-3" />
+		<widget source="session.CurrentService" render="Picon" position="300,235" zPosition="1" size="160,90" alphatest="blend">
+			<convert type="ServiceName">Reference</convert>
+		</widget>
+		<widget source="session.Event_Now" render="Progress" position="480,207" size="1390,4" foregroundColor="Nitro3" backgroundColor="#061920" transparent="0" zPosition="-1">
+			<convert type="EventTime">Progress</convert>
+		</widget>
+		<widget source="global.CurrentTime" render="Label" position="45,155" size="150,50" halign="center" valign="center" font="Nitro_L;35" foregroundColor="background" backgroundColor="Nitro" transparent="1">
+			<convert type="ClockToText">Format:%H:%M</convert>
+		</widget>
+		<widget source="session.CurrentService" render="Label" position="480,150" size="1000,50" font="Nitro_L;32" valign="center" halign="left" noWrap="1" backgroundColor="Nitro" foregroundColor="background" transparent="1">
+			<convert type="ServiceName">Name</convert>
+		</widget>
+		<widget render="Label" font="Nitro_L;32" foregroundColor="background" backgroundColor="Nitro" position="300,150" size="160,50" source="session.CurrentService" transparent="1" valign="center" halign="center">
+			<convert type="ServiceName2">Number</convert>
+		</widget>
+		<eLabel text="SNR:" position="45,254" size="80,25" font="Regular;21" backgroundColor="background" foregroundColor="foreground" transparent="1" valign="center" halign="left" />
+		<widget source="session.FrontendStatus" render="Label" position="115,254" size="90,25" font="Regular;21" backgroundColor="background" foregroundColor="foreground" transparent="1" valign="center" halign="right">
+			<convert type="FrontendInfo">SNRdB</convert>
+		</widget>
+		<eLabel text="BER:" position="45,282" size="60,25" font="Regular;21" backgroundColor="background" foregroundColor="foreground" transparent="1" noWrap="1" />
+		<widget source="session.FrontendStatus" render="Label" position="115,282" size="90,25" font="Regular;21" backgroundColor="background" foregroundColor="foreground" halign="right" transparent="1" noWrap="1">
+			<convert type="FrontendInfo">BER</convert>
+		</widget>
+		<widget pixmap="images/snr_bar.png" position="45,280" render="Progress" size="160,3" source="session.FrontendStatus" transparent="1" zPosition="3">
+			<convert type="FrontendInfo">SNR</convert>
+		</widget>
+		<widget source="session.Event_Now" render="Label" position="480,232" size="100,50" halign="left" valign="center" font="Regular;32" backgroundColor="background" transparent="1" foregroundColor="foreground">
+			<convert type="EventTime">StartTime</convert>
+			<convert type="ClockToText">Default</convert>
+		</widget>
+		<widget source="session.Event_Now" render="Label" position="580,232" size="1020,50" font="Regular;32" backgroundColor="background" foregroundColor="foreground" transparent="1" valign="center" noWrap="1">
+			<convert type="EventName">Name</convert>
+		</widget>
+		<widget source="session.Event_Now" render="Label" position="1600,232" size="250,50" font="Regular;32" backgroundColor="background" foregroundColor="foreground" halign="right" transparent="1" valign="center">
+			<convert type="EventTime">Remaining</convert>
+			<convert type="RemainingToText">InMinutes</convert>
+		</widget>
+		<widget source="session.Event_Next" render="Label" position="480,274" size="100,50" halign="left" valign="center" font="Regular;32" foregroundColor="foreground2" backgroundColor="background" transparent="1">
+			<convert type="EventTime">StartTime</convert>
+			<convert type="ClockToText">Default</convert>
+		</widget>
+		<widget source="session.Event_Next" render="Label" position="580,274" size="1020,50" font="Regular;32" foregroundColor="foreground2" backgroundColor="background" transparent="1" valign="center" noWrap="1">
+			<convert type="EventName">Name</convert>
+		</widget>
+		<widget source="session.Event_Next" render="Label" position="1600,274" size="250,50" font="Regular;32" backgroundColor="background" foregroundColor="foreground2" halign="right" valign="center" transparent="1">
+			<convert type="EventTime">Duration</convert>
+			<convert type="ClockToText">InMinutes</convert>
+		</widget>
+		<eLabel backgroundColor="grey" position="45,215" size="10,10" zPosition="1" />
+		<eLabel backgroundColor="grey" position="65,215" size="10,10" zPosition="1" />
+		<eLabel backgroundColor="grey" position="125,215" size="10,10" zPosition="1" />
+		<eLabel backgroundColor="grey" position="145,215" size="10,10" zPosition="1" />
+		<eLabel backgroundColor="grey" position="85,215" size="10,10" zPosition="1" />
+		<eLabel backgroundColor="grey" position="105,215" size="10,10" zPosition="1" />
+		<eLabel backgroundColor="grey" position="165,215" size="10,10" zPosition="1" />
+		<eLabel backgroundColor="grey" position="185,215" size="10,10" zPosition="1" />
+		<widget backgroundColor="blue" position="45,215" render="FixedLabel" size="10,10" source="session.TunerInfo" zPosition="2">
+			<convert type="TunerInfo">TunerUseMask</convert>
+			<convert type="ValueBitTest">1</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<widget backgroundColor="blue" position="65,215" render="FixedLabel" size="10,10" source="session.TunerInfo" zPosition="2">
+			<convert type="TunerInfo">TunerUseMask</convert>
+			<convert type="ValueBitTest">2</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<widget backgroundColor="blue" position="85,215" render="FixedLabel" size="10,10" source="session.TunerInfo" zPosition="2">
+			<convert type="TunerInfo">TunerUseMask</convert>
+			<convert type="ValueBitTest">4</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<widget backgroundColor="blue" position="105,215" render="FixedLabel" size="10,10" source="session.TunerInfo" zPosition="2">
+			<convert type="TunerInfo">TunerUseMask</convert>
+			<convert type="ValueBitTest">8</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<widget backgroundColor="blue" position="45,215" render="FixedLabel" size="10,10" source="session.TunerInfo" zPosition="2">
+			<convert type="TunerInfo">TunerUseMask</convert>
+			<convert type="ValueBitTest">16</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<widget backgroundColor="blue" position="65,215" render="FixedLabel" size="10,10" source="session.TunerInfo" zPosition="2">
+			<convert type="TunerInfo">TunerUseMask</convert>
+			<convert type="ValueBitTest">32</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<widget backgroundColor="blue" position="85,215" render="FixedLabel" size="10,10" source="session.TunerInfo" zPosition="2">
+			<convert type="TunerInfo">TunerUseMask</convert>
+			<convert type="ValueBitTest">64</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<widget backgroundColor="blue" position="105,215" render="FixedLabel" size="10,10" source="session.TunerInfo" zPosition="2">
+			<convert type="TunerInfo">TunerUseMask</convert>
+			<convert type="ValueBitTest">128</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<widget backgroundColor="yellow" position="45,215" render="FixedLabel" size="10,10" source="session.FrontendInfo" zPosition="3">
+			<convert type="FrontendInfo">NUMBER</convert>
+			<convert type="ValueRange">0,0</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<widget backgroundColor="yellow" position="65,215" render="FixedLabel" size="10,10" source="session.FrontendInfo" zPosition="3">
+			<convert type="FrontendInfo">NUMBER</convert>
+			<convert type="ValueRange">1,1</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<widget backgroundColor="yellow" position="85,215" render="FixedLabel" size="10,10" source="session.FrontendInfo" zPosition="3">
+			<convert type="FrontendInfo">NUMBER</convert>
+			<convert type="ValueRange">2,2</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<widget backgroundColor="yellow" position="105,215" render="FixedLabel" size="10,10" source="session.FrontendInfo" zPosition="3">
+			<convert type="FrontendInfo">NUMBER</convert>
+			<convert type="ValueRange">3,3</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<widget backgroundColor="yellow" position="45,215" render="FixedLabel" size="10,10" source="session.FrontendInfo" zPosition="3">
+			<convert type="FrontendInfo">NUMBER</convert>
+			<convert type="ValueRange">4,4</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<widget backgroundColor="yellow" position="65,215" render="FixedLabel" size="10,10" source="session.FrontendInfo" zPosition="3">
+			<convert type="FrontendInfo">NUMBER</convert>
+			<convert type="ValueRange">5,5</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<widget backgroundColor="yellow" position="85,215" render="FixedLabel" size="10,10" source="session.FrontendInfo" zPosition="3">
+			<convert type="FrontendInfo">NUMBER</convert>
+			<convert type="ValueRange">6,6</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+		<widget backgroundColor="yellow" position="105,215" render="FixedLabel" size="10,10" source="session.FrontendInfo" zPosition="3">
+			<convert type="FrontendInfo">NUMBER</convert>
+			<convert type="ValueRange">7,7</convert>
+			<convert type="ConditionalShowHide" />
+		</widget>
+	</screen>
+	
+	<!-- missing HistoryZapSelector -->
+	<!-- missing RecordTimerQuestion -->
+	<!-- missing RemoveTimerQuestion -->
+	
+</skin>
